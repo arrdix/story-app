@@ -26,31 +26,34 @@
         <div class="row text-center">
           <h5 class="m-0 text-dark">Julia Garner</h5>
         </div>
-        <nav class="navbar position-absolute bottom-0 start-50 translate-middle-x d-flex justify-content-center rounded-pill bg-primary w-80 py-1 mb-3 gap-3">
+        <nav class="navbar position-absolute bottom-0 start-50 translate-middle-x d-flex justify-content-center rounded-pill bg-primary w-80 py-2 mb-3 gap-4">
           <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
             <button
               type="button"
-              class="btn btn-prev btn-light rounded-pill"
+              class="btn rounded-pill rotatable"
+              id="btn-menu"
               data-bs-toggle="collapse" data-bs-target="#collapseNav"
               aria-controls="collapseNav"
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <i class="bi bi-chevron-double-down"></i>
+              <i class="bi bi-pause-circle-fill fs-3"></i>
             </button>
           </div>
-          <div class="container rounded-pill bg-primary w-40 px-0 m-0">
+          <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
             <button
               type="button"
-              class="btn btn-prev btn-light rounded-pill"
+              class="btn btn-secondary btn-prev btn-light rounded-pill"
               data-bs-target="#mainCarousel"
               data-bs-slide="prev"
             >
               <i class="bi bi-chevron-left"></i>
             </button>
+          </div>
+          <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
             <button
               type="button"
-              class="btn btn-next btn-light rounded-pill"
+              class="btn btn-secondary btn-next btn-light rounded-pill"
               data-bs-target="#mainCarousel"
               data-bs-slide="next"
             >
@@ -60,8 +63,7 @@
           <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
             <button
               type="button"
-              class="btn btn-prev btn-light rounded-pill"
-              id="btn-menu"
+              class="btn btn-secondary btn-prev btn-light rounded-pill"
               data-bs-toggle="collapse"
               data-bs-target="#collapseNav"
               aria-controls="collapseNav"
