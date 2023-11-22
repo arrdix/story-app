@@ -1,6 +1,7 @@
 import '../scss/styles.scss';
 import * as bootstrap from 'bootstrap'
 import { initNavbar } from './navbar';
+import { fetchDataFromAPI, fetchDataFromInput, stories } from './dataSource';
 
 // activate tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
