@@ -29,7 +29,7 @@ setTimeout(() => {
 const btnMenu = document.getElementById('btn-menu');
 setTimeout(() => {
   btnMenu.click();
-}, 1000);
+}, 1500);
 setTimeout(() => {
   btnMenu.click();
-}, 2500);
+}, 3500);

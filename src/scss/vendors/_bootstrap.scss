@@ -3,6 +3,7 @@
 // overriding bootstrap variables
 $primary: clr.$clr-primary;
 $secondary: clr.$clr-secondary;
+$dark: clr.$clr-dark;
 $form-feedback-invalid-color: clr.$clr-invalid;
 
 @import "bootstrap/scss/functions";
