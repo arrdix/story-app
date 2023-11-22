@@ -21,36 +21,85 @@
         </div>
         <nav class="navbar position-absolute bottom-0 start-50 translate-middle-x d-flex justify-content-center rounded-pill bg-primary w-80 py-1 mb-3 gap-3">
           <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
-            <button type="button" class="btn btn-prev btn-light rounded-pill" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button
+              type="button"
+              class="btn btn-prev btn-light rounded-pill"
+              data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+              aria-controls="navbarToggleExternalContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
               <i class="bi bi-pause-fill"></i>
             </button>
           </div>
           <div class="container rounded-pill bg-primary w-40 px-0 m-0">
-            <button type="button" class="btn btn-prev btn-light rounded-pill" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <button
+              type="button"
+              class="btn btn-prev btn-light rounded-pill"
+              data-bs-target="#mainCarousel"
+              data-bs-slide="prev"
+            >
               <i class="bi bi-chevron-left"></i>
             </button>
-            <button type="button" class="btn btn-next btn-light rounded-pill" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <button
+              type="button"
+              class="btn btn-next btn-light rounded-pill"
+              data-bs-target="#mainCarousel"
+              data-bs-slide="next"
+            >
               <i class="bi bi-chevron-right"></i>
             </button>
           </div>
           <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
-            <button type="button" class="btn btn-prev btn-light rounded-pill" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button
+              type="button"
+              class="btn btn-prev btn-light rounded-pill"
+              id="btn-menu"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseNav"
+              aria-controls="collapseNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
               <i class="bi bi-plus-lg"></i>
             </button>
           </div>
         </nav>
       </div>
       <div class="col-md-9 p-0 transition-fade" id="main-col">
-        <div id="mainCarousel" class="carousel slide vertical p-0" data-bs-ride="false">
+        <div
+          id="mainCarousel"
+          class="carousel slide vertical p-0"
+          data-bs-ride="false"
+        >
           <div class="carousel-indicators me-4">
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button
+              type="button"
+              data-bs-target="#mainCarousel"
+              data-bs-slide-to="0" class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            >
+            </button>
+            <button
+              type="button"
+              data-bs-target="#mainCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            >
+            </button>
+            <button
+              type="button"
+              data-bs-target="#mainCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            >
+            </button>
           </div>
           <div class="carousel-inner rounded-5">
             <div class="carousel-item rounded-5 active">
               <div class="card text-bg-dark">
-                <img src="https://source.unsplash.com/1200x700/?tennis" class="card-img p-0" alt="...">
+                <img src="https://source.unsplash.com/1200x700/?tennis" class="card-img p-0" alt="Story Image">
                 <div class="card-img-overlay">
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -76,25 +125,17 @@
         </div>
       </div>
     </div>
-    <div class="row collapse" id="navbarToggleExternalContent">
-      <div class="col-3"></div>
+    <nav class="row collapse" id="collapseNav">
+      <div class="col-3 d-flex align-items-center">
+      </div>
       <div class="col-9 text-light d-flex flex-row justify-content-between mt-2 px-5">
         <div class="d-flex justify-content-around gap-5">
           <a class="link-light link-underline link-underline-opacity-0 link-opacity-75-hover" href="#" type="button">Home</a>
           <a class="link-light link-underline link-underline-opacity-0 link-opacity-75-hover" href="#" type="button">About</a>
         </div>
-<div class="dropdown">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
+
       </div>
-    </div>
+    </nav>
   </div>
   <div class="toast-container position-fixed top-0 end-0 p-3">
     <div id="newPostToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">

@@ -12,17 +12,24 @@ setTimeout(() => {
   toastBootstrap.show()
 }, 1000);
 
-// Add event listener to the form
-var form = document.getElementById('login-form');
-form.addEventListener('submit', handleSubmit);
+// var form = document.getElementById('login-form');
+// form.addEventListener('submit', handleSubmit);
 
-function handleSubmit(event) {
-  var name = document.getElementById('username').value;
-  var email = document.getElementById('password').value;
+// function handleSubmit(event) {
+//   var name = document.getElementById('username').value;
+//   var email = document.getElementById('password').value;
 
-  if (!form.checkValidity()) {
-    event.preventDefault()
-    event.stopPropagation()
-  }
-  form.classList.add('was-validated')
-}
+//   if (!form.checkValidity()) {
+//     event.preventDefault()
+//     event.stopPropagation()
+//   }
+//   form.classList.add('was-validated')
+// }
+
+const btnMenu = document.getElementById('btn-menu');
+setTimeout(() => {
+  btnMenu.click();
+}, 1000);
+setTimeout(() => {
+  btnMenu.click();
+}, 2500);
