@@ -13,7 +13,9 @@ export function fetchDataFromAPI() {
       }
     })
     .catch(error => {
-      console.log('error');
+      const alertElement = document.querySelector('.alert');
+      alertElement.classList.add('alert-danger');
+      alertElement.innerHTML = `Error: failed to get data from API!`;
     })
 }
 
