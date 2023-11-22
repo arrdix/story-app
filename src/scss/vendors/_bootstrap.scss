@@ -1,0 +1,64 @@
+@use '../vendors-extension/colors' as clr;
+
+// overriding bootstrap variables
+$primary: clr.$clr-primary;
+$secondary: clr.$clr-secondary;
+$form-feedback-invalid-color: clr.$clr-invalid;
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// overriding bootstrap map
+$more-border-widths: (
+  6: 10px,
+  7: 15px,
+  8: 20px
+);
+
+$more-font-sizes: (
+  7 : 1rem * 0.95,
+  8 : 1rem * 0.9,
+  9 : 1rem * 0.85,
+  10: 1rem * 0.8,
+  11: 1rem * 0.75,
+  12: 1rem * 0.7,
+);
+
+$font-sizes: map-merge($more-font-sizes, $font-sizes );
+$border-widths: map-merge($more-border-widths, $border-widths);
+
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// overriding bootstrap utilities
+$utilities: map-merge(
+  $utilities,
+  (
+    "width": map-merge(
+      map-get($utilities, "width"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "width"), "values"),
+          (
+            5: 5%,
+            10: 10%,
+            20: 20%,
+            30: 30%,
+            40: 40%,
+            60: 60%,
+            70: 70%,
+            80: 80%,
+            90: 90%
+          ),
+        ),
+      ),
+    ),
+  )
+);
+
+@import "bootstrap/scss/utilities/api";
+
+// import bootstrap scss
+@import '../../../node_modules/bootstrap/scss/bootstrap';

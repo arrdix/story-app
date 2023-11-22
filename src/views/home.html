@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="bg-secondary">
+  <div class="container-sm position-absolute vh-75 top-50 start-50 translate-middle bg-primary rounded-5 border border-7 border-primary shadow-1">
+    <div class="row overflow-hidden">
+      <div class="col-md-3 position-relative py-5 transition-fade" id="left-col">
+        <div class="row justify-content-start justify-content-md-center mb-5">
+          <img src="/logo-long.png" class="w-50" alt="">
+        </div>
+        <div class="row justify-content-center mb-2">
+          <img src="/julia-garner.jpg" class="w-50 rounded-pill border border-3 border-light p-0 d-none d-lg-block" alt="Profile Picture">
+        </div>
+        <div class="row text-center">
+          <h5 class="m-0 text-white">Julia Garner</h5>
+          <p class="m-0 text-white fs-6">@juliagarner</p>
+        </div>
+        <nav class="navbar position-absolute bottom-0 start-50 translate-middle-x d-flex justify-content-center rounded-pill bg-primary w-80 py-1 mb-3 gap-3">
+          <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
+            <button type="button" class="btn btn-prev btn-light rounded-pill" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="bi bi-pause-fill"></i>
+            </button>
+          </div>
+          <div class="container rounded-pill bg-primary w-40 px-0 m-0">
+            <button type="button" class="btn btn-prev btn-light rounded-pill" data-bs-target="#mainCarousel" data-bs-slide="prev">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button type="button" class="btn btn-next btn-light rounded-pill" data-bs-target="#mainCarousel" data-bs-slide="next">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+          <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
+            <button type="button" class="btn btn-prev btn-light rounded-pill" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="bi bi-plus-lg"></i>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <div class="col-md-9 p-0 transition-fade" id="main-col">
+        <div id="mainCarousel" class="carousel slide vertical p-0" data-bs-ride="false">
+          <div class="carousel-indicators me-4">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner rounded-5">
+            <div class="carousel-item rounded-5 active">
+              <div class="card text-bg-dark">
+                <img src="https://source.unsplash.com/1200x700/?tennis" class="card-img p-0" alt="...">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://source.unsplash.com/1200x700/?tennis" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://source.unsplash.com/1200x700/?tennis" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="text-primary">Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row collapse" id="navbarToggleExternalContent">
+      <div class="col-3"></div>
+      <div class="col-9 text-light d-flex flex-row justify-content-between mt-2 px-5">
+        <div class="d-flex justify-content-around gap-5">
+          <a class="link-light link-underline link-underline-opacity-0 link-opacity-75-hover" href="#" type="button">Home</a>
+          <a class="link-light link-underline link-underline-opacity-0 link-opacity-75-hover" href="#" type="button">About</a>
+        </div>
+<div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="newPostToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="/julia-garner.jpg" class="rounded me-2 w-10" alt="...">
+        <strong class="me-auto">StoryApp</strong>
+        <small>Just Now</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Your friends have a new stories. Check them out now!
+      </div>
+    </div>
+  </div>
+</body>
+</html>
