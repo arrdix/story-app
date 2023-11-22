@@ -16,3 +16,15 @@ export function fetchDataFromAPI() {
       console.log('error');
     })
 }
+
+export function fetchDataFromUserInput(id, createdAt, description, name, photoUrl) {
+  const story = {
+    id: id,
+    createdAt: createdAt,
+    description: description,
+    name: name,
+    photoUrl, photoUrl
+  }
+
+  stories.unshift(story);
+}
