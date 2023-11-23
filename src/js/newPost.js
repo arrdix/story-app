@@ -1,4 +1,5 @@
 import { render } from "lit";
+import { stories } from "./dataSource";
 
 export function initNewPost() {
   const form = document.getElementById('new-post-form');
@@ -27,9 +28,38 @@ export function initNewPost() {
 
   form.addEventListener('submit', event => {
     if (!form.checkValidity()) {
-      event.preventDefault()
-      event.stopPropagation()
+      event.preventDefault();
+      event.stopPropagation();
     }
     form.classList.add('was-validated');
+    event.preventDefault();
+    storeData(image.value, description.value)
   })
+
+  function storeData(photoUrl, description) {
+    const currentDate = new Date();
+    const iso8601Format = currentDate.toISOString();
+
+    const newStory = {
+      id: generateRandomID(16),
+      name: 'Julia Garner',
+      description: description,
+      photoUrl: photoUrl,
+      createdAt: iso8601Format
+    }
+
+    stories.unshift(newStory);
+  }
+
+  function generateRandomID(length) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * chars.length);
+      result += chars[randomIndex];
+    }
+
+    return `story-${result}`;
+  }
 }
