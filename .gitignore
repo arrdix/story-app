@@ -24,3 +24,6 @@ build/
 
 # Ignore macOS system files
 .DS_Store
+
+# Ignore personal note
+notes

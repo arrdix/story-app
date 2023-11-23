@@ -39,3 +39,6 @@
     margin-bottom: 10px;
     transition: all .3s ease-in-out;
 }
+.carousel-indicators [data-bs-target] {
+  border: none !important;
+}
