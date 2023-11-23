@@ -1,6 +1,7 @@
 import { render } from "lit";
 import { stories } from "./dataSource";
 import { initNavbar } from "./navbar";
+import { LocalStorage } from "./localStorage";
 
 export function initNewPost() {
   const form = document.getElementById('new-post-form');
@@ -28,16 +29,17 @@ export function initNewPost() {
   })
 
   form.addEventListener('submit', event => {
+    event.preventDefault();
     if (!form.checkValidity()) {
       event.preventDefault();
       event.stopPropagation();
     }
     form.classList.add('was-validated');
-    event.preventDefault();
-    storeData(image.value, description.value)
+
+    generateNewStory(image.files[0].name, description.value)
   })
 
-  function storeData(photoUrl, description) {
+  function generateNewStory(photoUrl, description) {
     const currentDate = new Date();
     const iso8601Format = currentDate.toISOString();
 
@@ -45,11 +47,12 @@ export function initNewPost() {
       id: generateRandomID(16),
       name: 'Julia Garner',
       description: description,
-      photoUrl: photoUrl,
+      photoUrl: `/${photoUrl}`,
       createdAt: iso8601Format
     }
 
-    stories.unshift(newStory);
+    LocalStorage.storeData(newStory);
+    window.location.href = '/home.html';
   }
 
   function generateRandomID(length) {

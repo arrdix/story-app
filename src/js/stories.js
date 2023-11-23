@@ -1,10 +1,13 @@
-import { stories } from "./dataSource";
+import { LocalStorage } from "./localStorage";
 const moment = require('moment');
 
 export function renderStories() {
   function renderCard() {
+    const stories = LocalStorage.stories;
+    console.log(stories);
     stories.forEach((story, index) => {
       const isFirstIndex = index == 0;
+      const isOwner = story.name === 'Julia Garner';
       const rawDate = story.createdAt;
       const formattedDateFromNow = moment(rawDate).fromNow();
       const formattedDate = moment(rawDate).format('MMMM D, YYYY h:mm A');
@@ -18,7 +21,7 @@ export function renderStories() {
           <div class="card-backdrop position-absolute"></div>
           <div class="card-img-overlay">
             <div class="card-title d-flex justify-content-start gap-2">
-              <img src="${story.photoUrl}" class="rounded-pill border border-3 border-light w-5" alt="">
+              <img src="${isOwner ? "/julia-garner.jpg" : story.photoUrl}" class="rounded-pill border border-3 border-light w-5" alt="">
               <div class="d-flex flex-column">
                 <p class="m-0">${story.name}</p>
                 <p class="fs-12 m-0">${formattedDateFromNow} | ${formattedDate}</p>

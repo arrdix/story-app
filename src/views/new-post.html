@@ -26,7 +26,7 @@
             <form class="needs-validation" id="new-post-form" novalidate>
               <div class="mx-4 mb-2">
                 <label for="image" class="form-label fs-10 m-1">Upload a photo</label>
-                <input class="form-control form-control-sm fs-10" id="image" type="file" required>
+                <input class="form-control form-control-sm fs-10" id="image" type="file" accept="image/*" required>
                 <div class="invalid-feedback fs-10">Please upload your story photo.</div>
               </div>
               <div class="mx-4 mb-4">
@@ -62,7 +62,7 @@
       </div>
       <div class="col-md-9 p-0 border border-7 border-start-0 border-primary rounded-5" id="main-col">
         <div class="card text-light rounded-5">
-          <img src="https://placehold.co/1200x700/272727/fff?text=upload+your+story+image" class="card-img rounded-5 p-0" id="image-preview" alt="Story Image">
+          <img src="https://placehold.co/1200x700/272727/fff?text=please+upload+your+story+image+from+public/img+directory" class="card-img rounded-5 p-0" id="image-preview" alt="Story Image">
           <div class="card-backdrop position-absolute rounded-5"></div>
           <div class="card-img-overlay">
             <div class="card-title d-flex justify-content-start gap-2">
@@ -73,7 +73,7 @@
               </div>
             </div>
             <div class="card-body p-0">
-              <p class="card-text fs-8" id="description-preview">Write your story description.</p>
+              <p class="card-text fs-8" id="description-preview">Please write your story description.</p>
             </div>
           </div>
         </div>
@@ -100,16 +100,18 @@
       </div>
     </nav>
   </div>
-  <div class="toast-container position-fixed top-0 end-0 p-3">
-    <div id="newPostToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-container position-fixed top-0 start-0 p-3">
+    <div id="newPostToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
       <div class="toast-header">
         <img src="/julia-garner.jpg" class="rounded me-2 w-10" alt="...">
         <strong class="me-auto">StoryApp</strong>
-        <small>Just Now</small>
+        <small class="fs-12">Just Now</small>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
-      <div class="toast-body">
-        Your friends have a new stories. Check them out now!
+      <div class="toast-body fs-10">
+        Due to browser security restrictions,
+        please use a image with the filename 'STORY-IMAGE.jpg' or any file located in the 'public/img' directory.
+        Thanks!
       </div>
     </div>
   </div>

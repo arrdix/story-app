@@ -5,7 +5,7 @@ import { initHome } from './home';
 import { initNewPost } from './newPost';
 import { initNavbar } from './navbar';
 import { renderStories } from './stories';
-import { stories } from './dataSource';
+import { fetchDataFromAPI, stories } from './dataSource';
 
 // activate tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -28,12 +28,15 @@ const routes = {
 function detectRoute() {
   return routes[window.location.pathname];
 }
-
 window.addEventListener('DOMContentLoaded', initPages);
 
 function initPages() {
+  const isFetched = localStorage.getItem('fetched');
+  if (!isFetched) {
+    fetchDataFromAPI();
+    localStorage.setItem('fetched', true);
+  }
+
   const route = detectRoute();
   route();
-
-  console.log(stories);
 }
