@@ -13,19 +13,23 @@ export function initNewPost() {
       reader.onload = function(e) {
         const preview = document.getElementById('image-preview');
         preview.src = e.target.result;
-          console.log(e);
       }
 
       reader.readAsDataURL(file);
     }
   })
 
-  form.addEventListener('submit', handleSubmit);
-  function handleSubmit(event) {
+  description.addEventListener('input', event => {
+    const inputValue = event.target.value;
+    const descriptionPreview = document.getElementById('description-preview');
+    descriptionPreview.textContent = inputValue;
+  })
+
+  form.addEventListener('submit', event => {
     if (!form.checkValidity()) {
       event.preventDefault()
       event.stopPropagation()
     }
     form.classList.add('was-validated');
-  }
+  })
 }

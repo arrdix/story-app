@@ -9,7 +9,7 @@
   <div class="container-sm position-absolute vh-75 top-50 start-50 translate-middle bg-primary rounded-5 shadow-1">
     <div class="row overflow-hidden">
       <div class="col-md-3 position-relative py-5 transition-fade" id="left-col">
-        <div class="row justify-content-start justify-content-md-center mb-5">
+        <div class="row justify-content-start justify-content-md-center mb-4">
           <img src="/logo-long-dark.png" class="w-50" alt="StoryApp Logo">
         </div>
         <div class="row mb-4">
@@ -39,11 +39,11 @@
             </form>
           </div>
         </div>
-        <nav class="navbar position-absolute bottom-0 start-50 translate-middle-x d-flex justify-content-between rounded-pill bg-primary w-80 py-2 px-3 mb-3 gap-4">
+        <nav class="navbar position-absolute bottom-0 start-50 translate-middle-x d-flex justify-content-between rounded-pill bg-primary w-80 px-3 mb-3 gap-4">
           <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
             <button
               type="button"
-              class="btn rounded-pill rotatable"
+              class="btn rounded-pill p-0 rotatable"
               id="btn-menu"
               data-bs-toggle="collapse" data-bs-target="#collapseNav"
               aria-controls="collapseNav"
@@ -56,7 +56,7 @@
           <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
             <button
               type="button"
-              class="btn btn-secondary btn-prev btn-light rounded-pill"
+              class="btn btn-secondary btn-light p-1 px-2 rounded-pill"
               data-bs-toggle="collapse"
               data-bs-target="#collapseNav"
               aria-controls="collapseNav"
@@ -70,7 +70,7 @@
       </div>
       <div class="col-md-9 p-0 border border-7 border-start-0 border-primary rounded-5" id="main-col">
         <div class="card text-light rounded-5">
-          <img src="/blank-template.jpg" class="card-img rounded-5 p-0" id="image-preview" alt="Story Image">
+          <img src="https://placehold.co/1200x700/272727/fff?text=upload+your+story+image" class="card-img rounded-5 p-0" id="image-preview" alt="Story Image">
           <div class="card-backdrop position-absolute rounded-5"></div>
           <div class="card-img-overlay">
             <div class="card-title d-flex justify-content-start gap-2">
@@ -81,7 +81,7 @@
               </div>
             </div>
             <div class="card-body p-0">
-              <p class="card-text fs-8">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text fs-8" id="description-preview">Write your story description.</p>
             </div>
           </div>
         </div>
