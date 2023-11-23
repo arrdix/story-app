@@ -13,7 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: "./src/views/home.html" }),
+    new HtmlWebpackPlugin({ template: "./src/views/new-post.html" }),
     new CopyWebpackPlugin({
       patterns: [
         {

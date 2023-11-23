@@ -3,6 +3,7 @@ import * as bootstrap from 'bootstrap'
 import { initNavbar } from './navbar';
 import { fetchDataFromAPI, fetchDataFromUserInput, stories } from './dataSource';
 import { renderStories } from './stories';
+import { initNewPost } from './newPost';
 
 // activate tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -24,7 +25,8 @@ function fetchData() {
 
 function initialize() {
   initNavbar();
-  renderStories();
+  // renderStories();
+  initNewPost();
 }
 
 fetchData();

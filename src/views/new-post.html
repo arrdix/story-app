@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="bg-secondary">
+  <div class="container-sm position-absolute vh-75 top-50 start-50 translate-middle bg-primary rounded-5 shadow-1">
+    <div class="row overflow-hidden">
+      <div class="col-md-3 position-relative py-5 transition-fade" id="left-col">
+        <div class="row justify-content-start justify-content-md-center mb-5">
+          <img src="/logo-long-dark.png" class="w-50" alt="StoryApp Logo">
+        </div>
+        <div class="row mb-4">
+          <div class="col-12 d-flex flex-row justify-content-center align-items-center gap-2">
+            <img src="/julia-garner.jpg" class="rounded-pill border border-2 border-dark w-20" alt="Profile Picture">
+            <div class="d-flex flex-column">
+              <p class="m-0">Julia Garner</p>
+              <p class="fs-12 m-0">Post new story</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <form class="needs-validation" id="new-post-form" novalidate>
+              <div class="mx-4 mb-2">
+                <label for="image" class="form-label fs-10 m-1">Upload a photo</label>
+                <input class="form-control form-control-sm fs-10" id="image" type="file" required>
+                <div class="invalid-feedback fs-10">Please upload your story photo.</div>
+              </div>
+              <div class="mx-4 mb-4">
+                <textarea class="form-control form-control form-control-sm fs-10" id="description" rows="3" placeholder="Story description" required></textarea>
+                <div class="invalid-feedback fs-10">Please write your story description.</div>
+              </div>
+              <div class="d-grid mx-4 mb-2">
+                <button class="btn btn-dark fs-8 fw-1" type="submit">Post</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <nav class="navbar position-absolute bottom-0 start-50 translate-middle-x d-flex justify-content-between rounded-pill bg-primary w-80 py-2 px-3 mb-3 gap-4">
+          <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
+            <button
+              type="button"
+              class="btn rounded-pill rotatable"
+              id="btn-menu"
+              data-bs-toggle="collapse" data-bs-target="#collapseNav"
+              aria-controls="collapseNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="bi bi-pause-circle-fill fs-3"></i>
+            </button>
+          </div>
+          <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
+            <button
+              type="button"
+              class="btn btn-secondary btn-prev btn-light rounded-pill"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseNav"
+              aria-controls="collapseNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="bi bi-chevron-left"></i>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <div class="col-md-9 p-0 border border-7 border-start-0 border-primary rounded-5" id="main-col">
+        <div class="card text-light rounded-5">
+          <img src="/blank-template.jpg" class="card-img rounded-5 p-0" id="image-preview" alt="Story Image">
+          <div class="card-backdrop position-absolute rounded-5"></div>
+          <div class="card-img-overlay">
+            <div class="card-title d-flex justify-content-start gap-2">
+              <img src="/julia-garner.jpg" class="rounded-pill border border-3 border-light w-5" alt="">
+              <div class="d-flex flex-column">
+                <p class="m-0">Julia Garner</p>
+                <p class="fs-12 m-0">Story Preview</p>
+              </div>
+            </div>
+            <div class="card-body p-0">
+              <p class="card-text fs-8">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="row collapse" id="collapseNav">
+      <div class="col-3 d-flex align-items-center">
+      </div>
+      <div class="col-9 text-dark d-flex flex-row justify-content-between mb-2 pb-2 px-5">
+        <div class="d-flex justify-content-around align-items-center gap-5">
+          <a class="link-dark link-underline link-underline-opacity-0 link-opacity-75-hover fs-8" href="#" type="button">Home</a>
+          <a class="link-dark link-underline link-underline-opacity-0 link-opacity-75-hover fs-8" href="#" type="button">About</a>
+        </div>
+        <div class="btn-group dropup">
+          <button type="button" class="btn dropdown-toggle fs-10 p-0" data-bs-toggle="dropdown" aria-expanded="false">
+            English (US)
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item fs-10" href="#">English (US)</a></li>
+            <li><a class="dropdown-item fs-10" href="#">Indonesia (ID)</a></li>
+            <li><a class="dropdown-item fs-10" href="#">German (DE)</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="newPostToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="/julia-garner.jpg" class="rounded me-2 w-10" alt="...">
+        <strong class="me-auto">StoryApp</strong>
+        <small>Just Now</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Your friends have a new stories. Check them out now!
+      </div>
+    </div>
+  </div>
+  <div class="alert" role="alert"></div>
+</body>
+</html>
