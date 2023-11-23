@@ -6,7 +6,8 @@ export function renderStories() {
     stories.forEach((story, index) => {
       const isFirstIndex = index == 0;
       const rawDate = story.createdAt;
-      const formattedDate = moment(rawDate).fromNow();
+      const formattedDateFromNow = moment(rawDate).fromNow();
+      const formattedDate = moment(rawDate).format('MMMM D, YYYY h:mm A');
       const carouselInner = document.querySelector('.carousel-inner');
       const carouselItem = document.createElement('div');
       carouselItem.setAttribute('class', `carousel-item rounded-5 ${isFirstIndex ? " active" : ""}`);
@@ -20,7 +21,7 @@ export function renderStories() {
               <img src="${story.photoUrl}" class="rounded-pill border border-3 border-light w-5" alt="">
               <div class="d-flex flex-column">
                 <p class="m-0">${story.name}</p>
-                <p class="fs-12 m-0">Last updated ${formattedDate}</p>
+                <p class="fs-12 m-0">${formattedDateFromNow} | ${formattedDate}</p>
               </div>
             </div>
             <div class="card-body p-0">
