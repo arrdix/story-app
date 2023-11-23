@@ -13,7 +13,21 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: "./src/views/new-post.html" }),
+    new HtmlWebpackPlugin({ 
+      title: 'Login',
+      filename: 'index.html',
+      template: path.resolve(__dirname, 'src/views/index.html'),
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Home',
+      filename: 'home.html',
+      template: path.resolve(__dirname, 'src/views/home.html'),
+    }),
+    new HtmlWebpackPlugin({
+      title: 'New Post',
+      filename: 'new-post.html',
+      template: path.resolve(__dirname, 'src/views/new-post.html'),
+    }),
     new CopyWebpackPlugin({
       patterns: [
         {

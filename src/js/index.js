@@ -1,9 +1,11 @@
 import '../scss/styles.scss';
 import * as bootstrap from 'bootstrap'
-import { initNavbar } from './navbar';
-import { fetchDataFromAPI, fetchDataFromUserInput, stories } from './dataSource';
-import { renderStories } from './stories';
+import { initLogin } from './login';
+import { initHome } from './home';
 import { initNewPost } from './newPost';
+import { initNavbar } from './navbar';
+import { renderStories } from './stories';
+import { stories } from './dataSource';
 
 // activate tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -16,17 +18,22 @@ setTimeout(() => {
   toastBootstrap.show()
 }, 1000);
 
-function fetchData() {
-  fetchDataFromAPI()
-    .then(() => {
-      initialize();
-    })
+// routing
+const routes = {
+  '/': initLogin,
+  '/home.html': initHome,
+  '/new-post.html': initNewPost
 }
 
-function initialize() {
-  initNavbar();
-  // renderStories();
-  initNewPost();
+function detectRoute() {
+  return routes[window.location.pathname];
 }
 
-fetchData();
+window.addEventListener('DOMContentLoaded', initPages);
+
+function initPages() {
+  const route = detectRoute();
+  route();
+
+  console.log(stories);
+}

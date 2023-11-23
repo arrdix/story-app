@@ -1,5 +1,6 @@
 import { render } from "lit";
 import { stories } from "./dataSource";
+import { initNavbar } from "./navbar";
 
 export function initNewPost() {
   const form = document.getElementById('new-post-form');
@@ -62,4 +63,6 @@ export function initNewPost() {
 
     return `story-${result}`;
   }
+
+  initNavbar();
 }
