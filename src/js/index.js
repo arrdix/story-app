@@ -12,7 +12,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 // activate toast
-const toastLiveExample = document.getElementById('newPostToast')
+const toastLiveExample = document.getElementById('mainToast')
 const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
 setTimeout(() => {
   toastBootstrap.show()
