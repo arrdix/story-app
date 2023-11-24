@@ -18,7 +18,7 @@ export function renderStories() {
       carouselItem.innerHTML = `
         <div class="card h-100 text-light">
           <img src="${story.photoUrl}" class="card-img h-100 object-fit-cover p-0" alt="Story Image">
-          <div class="card-backdrop position-absolute"></div>
+          <div class="card-backdrop position-absolute top-50 start-50 translate-middle"></div>
           <div class="card-img-overlay">
             <div class="card-title d-flex justify-content-start ps-2 pt-2 gap-2">
               <img src="${isOwner ? "/julia-garner.jpg" : story.photoUrl}" class="rounded-pill border border-3 border-light w-5" alt="">

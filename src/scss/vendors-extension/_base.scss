@@ -31,16 +31,13 @@
 }
 .btn-secondary {
     color: #2f2f2f;
-    background-color: #F7F7F7;
-    border-color: #F7F7F7;
+    background-color: transparent;
+    border-color: transparent;
 }
 .btn-secondary:hover, .btn-secondary:active {
     color: #2f2f2f;
-    background-color: #F7F7F7;
-    border-color: #F7F7F7;
-    position: absolute;
-    margin-bottom: 10px;
-    transition: all .3s ease-in-out;
+    background-color: transparent;
+    border-color: transparent;
 }
 .carousel-indicators [data-bs-target] {
   border: none !important;

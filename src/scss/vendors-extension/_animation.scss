@@ -1,10 +1,58 @@
+@keyframes scroll {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
 .transition-fade {
   transition: all 1s;
 }
 .rotatable {
   transform: rotate(90deg);
   transition: transform 0.5s;
+
+  &.rotate-active {
+    transform: rotate(360deg);
+  }
 }
-.rotate-active {
-  transform: rotate(360deg);
+.pop-element {
+  visibility: visible;
+  transform: translateY(0);
+  transition: transform .5s ease-in-out;
+
+  &:not(.show) {
+    visibility: hidden;
+    transform: translateY(100%);
+  }
+}
+.pop-element-reverse {
+  visibility: visible;
+  transform: translateY(0);
+  transition: transform .5s ease-in-out;
+
+  &:not(.show) {
+    visibility: hidden;
+    transform: translateY(-100%);
+  }
+}
+.pop-button {
+  transition: transform .3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.5) translateY(-10%);
+    transition: transform .3s ease-in-out;
+  }
+}
+.slide-button {
+  transition: transform .3s ease-in-out;
+
+  &:hover {
+    transform: translateX(15%);
+    transition: transform .3s ease-in-out;
+  }
+}
+.scrolling-element {
+  animation: scroll 1s ease infinite alternate;
 }

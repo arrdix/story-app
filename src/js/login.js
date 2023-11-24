@@ -1,20 +1,32 @@
 export function initLogin() {
-  const form = document.getElementById('login-form');
-  form.addEventListener('submit', handleSubmit);
+  window.addEventListener('load', () => {
+    const leftCol = document.querySelector('#left-col');
+    setTimeout(() => {
+      leftCol.classList.add('show');
+    }, 500);
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const mainCol = document.querySelector('#main-col');
+    setTimeout(() => {
+      mainCol.classList.add('show');
+    }, 1000);
 
-    if (!form.checkValidity()) {
+    const form = document.getElementById('login-form');
+    form.addEventListener('submit', handleSubmit);
+
+    function handleSubmit(event) {
       event.preventDefault();
-      event.stopPropagation();
-    }
-    form.classList.add('was-validated')
+      const name = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
 
-    if (name === 'julia' && password === 'garner') {
-      window.location.href = '/home.html';
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated')
+
+      if (name === 'julia' && password === 'garner') {
+        window.location.href = '/home.html';
+      }
     }
-  }
+  })
 }
