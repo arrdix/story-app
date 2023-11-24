@@ -1,12 +1,12 @@
 import '../scss/styles.scss';
 import * as bootstrap from 'bootstrap';
 import { components } from './components';
+
 import { initLogin } from './login';
 import { initHome } from './home';
 import { initNewPost } from './newPost';
-import { initNavbar } from './navbar';
-import { renderStories } from './stories';
-import { fetchDataFromAPI, stories } from './dataSource';
+import { fetchDataFromAPI } from './dataSource';
+import { initAbout } from './components/about';
 
 // activate tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -24,7 +24,7 @@ const routes = {
   '/': initLogin,
   '/home.html': initHome,
   '/new-post.html': initNewPost,
-  '/about.html': null,
+  '/about.html': initAbout,
 }
 
 function detectRoute() {
