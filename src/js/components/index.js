@@ -1,3 +1,5 @@
+import './AppLogo';
+
 import './NavCollapse';
 import './NavButtons';
 
