@@ -1,5 +1,6 @@
 import '../scss/styles.scss';
-import * as bootstrap from 'bootstrap'
+import * as bootstrap from 'bootstrap';
+import { components } from './components';
 import { initLogin } from './login';
 import { initHome } from './home';
 import { initNewPost } from './newPost';
