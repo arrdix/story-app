@@ -23,7 +23,8 @@ setTimeout(() => {
 const routes = {
   '/': initLogin,
   '/home.html': initHome,
-  '/new-post.html': initNewPost
+  '/new-post.html': initNewPost,
+  '/about.html': null,
 }
 
 function detectRoute() {
