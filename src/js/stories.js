@@ -13,21 +13,21 @@ export function renderStories() {
       const formattedDate = moment(rawDate).format('MMMM D, YYYY h:mm A');
       const carouselInner = document.querySelector('.carousel-inner');
       const carouselItem = document.createElement('div');
-      carouselItem.setAttribute('class', `carousel-item rounded-5 ${isFirstIndex ? " active" : ""}`);
+      carouselItem.setAttribute('class', `carousel-item rounded-5 h-100 ${isFirstIndex ? " active" : ""}`);
       carouselItem.setAttribute('id', `${story.id}`);
       carouselItem.innerHTML = `
         <div class="card text-light">
-          <img src="${story.photoUrl}" class="card-img p-0" alt="Story Image">
+          <img src="${story.photoUrl}" class="card-img object-fit-cover p-0" alt="Story Image">
           <div class="card-backdrop position-absolute"></div>
           <div class="card-img-overlay">
-            <div class="card-title d-flex justify-content-start gap-2">
+            <div class="card-title d-flex justify-content-start ps-2 pt-2 gap-2">
               <img src="${isOwner ? "/julia-garner.jpg" : story.photoUrl}" class="rounded-pill border border-3 border-light w-5" alt="">
               <div class="d-flex flex-column">
                 <p class="m-0">${story.name}</p>
                 <p class="fs-12 m-0">${formattedDateFromNow} | ${formattedDate}</p>
               </div>
             </div>
-            <div class="card-body p-0">
+            <div class="card-body p-0 ps-2">
               <p class="card-text fs-8">${story.description}</p>
             </div>
           </div>

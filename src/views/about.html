@@ -7,7 +7,7 @@
 </head>
 <body class="bg-secondary">
   <div class="container-sm position-absolute top-50 start-50 translate-middle bg-primary rounded-5 shadow-1">
-    <div class="row h-100 overflow-hidden">
+    <div class="row vh-70 overflow-hidden">
       <div class="col-md-3 position-relative px-5 py-5" id="left-col">
         <div class="row justify-content-start justify-content-md-center mb-5">
           <img src="/logo-long-dark.png" class="w-60" alt="">
@@ -24,6 +24,26 @@
             soluta eius excepturi non sit?
           </p>
         </div>
+        <nav class="navbar position-absolute bottom-0 start-50 translate-middle-x d-flex justify-content-between rounded-pill bg-primary w-80 px-3 mb-3 gap-4">
+          <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
+            <button
+              type="button"
+              class="btn rounded-pill p-0 rotatable"
+              id="btn-menu"
+              data-bs-toggle="collapse" data-bs-target="#collapseNav"
+              aria-controls="collapseNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="bi bi-pause-circle-fill fs-3"></i>
+            </button>
+          </div>
+          <div class="container rounded-pill d-flex justify-content-center w-10 px-0 m-0">
+            <a href="/home.html" class="btn btn-secondary btn-prev btn-light rounded-pill">
+              <i class="bi bi-chevron-left"></i>
+            </a>
+          </div>
+        </nav>
       </div>
       <div class="col-md-3 px-5 py-5">
         <div class="row text-center mb-3">
@@ -66,6 +86,27 @@
           <img src="/about-pic-light.jpg" class="img-fluid rounded-5 w-100 h-100 object-fit-cover" alt="">
       </div>
     </div>
+    <nav class="row collapse" id="collapseNav">
+      <div class="col-3 d-flex justify-content-center align-items-center">
+        <p>ABOUT</p>
+      </div>
+      <div class="col-9 text-dark d-flex flex-row justify-content-between mb-2 pb-2 px-5">
+        <div class="d-flex justify-content-around align-items-center gap-5">
+          <a class="link-dark link-underline link-underline-opacity-0 link-opacity-75-hover fs-8" href="home.html" type="button">Home</a>
+          <a class="link-dark link-underline link-underline-opacity-0 link-opacity-75-hover fs-8" href="about.html" type="button">About</a>
+        </div>
+        <div class="btn-group dropup">
+          <button type="button" class="btn dropdown-toggle fs-10 p-0" data-bs-toggle="dropdown" aria-expanded="false">
+            English (US)
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item fs-10" href="#">English (US)</a></li>
+            <li><a class="dropdown-item fs-10" href="#">Indonesia (ID)</a></li>
+            <li><a class="dropdown-item fs-10" href="#">German (DE)</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </div>
   <div class="toast-container position-fixed top-0 start-0 p-3">
     <div id="mainToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">

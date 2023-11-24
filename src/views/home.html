@@ -6,9 +6,9 @@
   <title>Document</title>
 </head>
 <body class="bg-secondary">
-  <div class="container-sm position-absolute vh-75 top-50 start-50 translate-middle bg-primary rounded-5 shadow-1">
-    <div class="row overflow-hidden">
-      <div class="col-md-3 position-relative py-5 transition-fade" id="left-col">
+  <div class="container-sm position-absolute top-50 start-50 translate-middle bg-primary rounded-5 shadow-1">
+    <div class="row vh-70 overflow-hidden">
+      <div class="col-md-3 position-relative py-5" id="left-col">
         <div class="row justify-content-start justify-content-md-center mb-5">
           <img src="/logo-long-dark.png" class="w-50" alt="StoryApp Logo">
         </div>
@@ -67,146 +67,14 @@
           </div>
         </nav>
       </div>
-      <div class="col-md-9 p-0 transition-fade" id="main-col">
+      <div class="col-md-9 h-100 p-0 overflow-hidden" id="main-col">
         <div
           id="mainCarousel"
-          class="carousel slide vertical p-0"
+          class="carousel slide vertical h-100 p-0"
           data-bs-ride="false"
         >
-          <div class="carousel-indicators me-4">
-            <!-- <button
-              type="button"
-              data-bs-target="#mainCarousel"
-              data-bs-slide-to="0" class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            >
-            </button>
-            <button
-              type="button"
-              data-bs-target="#mainCarousel"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            >
-            </button>
-            <button
-              type="button"
-              data-bs-target="#mainCarousel"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            >
-            </button> -->
-          </div>
-          <div class="carousel-inner rounded-5 border border-7 border-start-0 border-primary">
-            <!-- <div class="carousel-item rounded-5 active">
-              <div class="card text-bg-dark">
-                <img src="https://source.unsplash.com/1200x700/?tennis" class="card-img p-0" alt="Story Image">
-                <div class="card-backdrop position-absolute"></div>
-                <div class="card-img-overlay">
-                  <div class="card-title d-flex justify-content-start gap-2">
-                    <img src="/julia-garner.jpg" class="rounded-pill border border-3 border-light w-5" alt="">
-                    <div class="d-flex flex-column">
-                      <p class="m-0">Julia Garner</p>
-                      <p class="fs-12 m-0">Last updated 3 mins ago</p>
-                    </div>
-                  </div>
-                  <div class="card-body p-0">
-                    <p class="card-text fs-8">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item rounded-5">
-              <div class="card text-bg-dark">
-                <img src="https://source.unsplash.com/1200x700/?tennis" class="card-img p-0" alt="Story Image">
-                <div class="card-backdrop position-absolute"></div>
-                <div class="card-img-overlay">
-                  <div class="card-title d-flex justify-content-start gap-2">
-                    <img src="/julia-garner.jpg" class="rounded-pill border border-3 border-light w-5" alt="">
-                    <div class="d-flex flex-column">
-                      <p class="m-0">Julia Garner</p>
-                      <p class="fs-12 m-0">Last updated 3 mins ago</p>
-                    </div>
-                  </div>
-                  <div class="card-body p-0">
-                    <p class="card-text fs-8">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item rounded-5">
-              <div class="card text-bg-dark">
-                <img src="https://source.unsplash.com/1200x700/?tennis" class="card-img p-0" alt="Story Image">
-                <div class="card-backdrop position-absolute"></div>
-                <div class="card-img-overlay">
-                  <div class="card-title d-flex justify-content-start gap-2">
-                    <img src="/julia-garner.jpg" class="rounded-pill border border-3 border-light w-5" alt="">
-                    <div class="d-flex flex-column">
-                      <p class="m-0">Julia Garner</p>
-                      <p class="fs-12 m-0">Last updated 3 mins ago</p>
-                    </div>
-                  </div>
-                  <div class="card-body p-0">
-                    <p class="card-text fs-8">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item rounded-5">
-              <div class="card text-bg-dark">
-                <img src="https://source.unsplash.com/1200x700/?tennis" class="card-img p-0" alt="Story Image">
-                <div class="card-backdrop position-absolute"></div>
-                <div class="card-img-overlay">
-                  <div class="card-title d-flex justify-content-start gap-2">
-                    <img src="/julia-garner.jpg" class="rounded-pill border border-3 border-light w-5" alt="">
-                    <div class="d-flex flex-column">
-                      <p class="m-0">Julia Garner</p>
-                      <p class="fs-12 m-0">Last updated 3 mins ago</p>
-                    </div>
-                  </div>
-                  <div class="card-body p-0">
-                    <p class="card-text fs-8">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item rounded-5">
-              <div class="card text-bg-dark">
-                <img src="https://source.unsplash.com/1200x700/?tennis" class="card-img p-0" alt="Story Image">
-                <div class="card-backdrop position-absolute"></div>
-                <div class="card-img-overlay">
-                  <div class="card-title d-flex justify-content-start gap-2">
-                    <img src="/julia-garner.jpg" class="rounded-pill border border-3 border-light w-5" alt="">
-                    <div class="d-flex flex-column">
-                      <p class="m-0">Julia Garner</p>
-                      <p class="fs-12 m-0">Last updated 3 mins ago</p>
-                    </div>
-                  </div>
-                  <div class="card-body p-0">
-                    <p class="card-text fs-8">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item rounded-5">
-              <div class="card text-bg-dark">
-                <img src="https://source.unsplash.com/1200x700/?tennis" class="card-img p-0" alt="Story Image">
-                <div class="card-backdrop position-absolute"></div>
-                <div class="card-img-overlay">
-                  <div class="card-title d-flex justify-content-start gap-2">
-                    <img src="/julia-garner.jpg" class="rounded-pill border border-3 border-light w-5" alt="">
-                    <div class="d-flex flex-column">
-                      <p class="m-0">Julia Garner</p>
-                      <p class="fs-12 m-0">Last updated 3 mins ago</p>
-                    </div>
-                  </div>
-                  <div class="card-body p-0">
-                    <p class="card-text fs-8">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-          </div>
+          <div class="carousel-indicators me-4"></div>
+          <div class="carousel-inner h-100 border rounded-5 border-7 border-start-0 border-primary"></div>
         </div>
       </div>
     </div>
