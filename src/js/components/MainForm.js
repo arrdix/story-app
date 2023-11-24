@@ -2,13 +2,17 @@ import { html } from "lit";
 import { LitLightDom } from "./base/litLightDom";
 
 export class MainForm extends LitLightDom {
+  static properties = {
+    idName: { type: String, reflect: true }
+  }
+
   constructor() {
     super();
   }
 
   render() {
     return html`
-      <form class="needs-validation" id="${this._isLoginPage() ? "login-form" : "new-post-form"}" novalidate>
+      <form class="needs-validation" id="${this.idName}" novalidate>
         ${this._isLoginPage()
           ? html`
               <div class="mx-4 mb-2">

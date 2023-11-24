@@ -2,6 +2,10 @@ import { html } from "lit";
 import { LitLightDom } from "./base/litLightDom";
 
 export class NavCollapse extends LitLightDom {
+  static properties = {
+    title: { type: String, reflect: true }
+  }
+
   constructor() {
     super();
   }
@@ -9,7 +13,7 @@ export class NavCollapse extends LitLightDom {
   render() {
     return html`
       <div class="col-3 d-flex justify-content-center align-items-center">
-        <p>HOME</p>
+        <p>${this.title}</p>
       </div>
       <div class="col-9 text-dark d-flex flex-row justify-content-between mb-2 pb-2 px-5">
         <div class="d-flex justify-content-around align-items-center gap-5">

@@ -1,5 +1,3 @@
-import { render } from "lit";
-import { stories } from "./dataSource";
 import { initNavbar } from "./navbar";
 import { LocalStorage } from "./localStorage";
 
