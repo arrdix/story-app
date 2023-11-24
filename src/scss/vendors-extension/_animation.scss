@@ -1,9 +1,9 @@
 @keyframes scroll {
   from {
-    transform: translateY(-100%);
+    transform: translateY(-50%);
   }
   to {
-    transform: translateY(100%);
+    transform: translateY(50%);
   }
 }
 .transition-fade {

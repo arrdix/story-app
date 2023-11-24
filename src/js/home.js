@@ -7,6 +7,16 @@ export function initHome() {
     // activate tooltips
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(tooltipTrigger => new bootstrap.Tooltip(tooltipTrigger));
+    const mainCarouselElement = document.getElementById('mainCarousel');
+
+    mainCarouselElement.addEventListener('wheel', event => {
+      const mainCarousel = new bootstrap.Carousel(document.getElementById('mainCarousel'));
+      if (event.deltaY > 0) mainCarousel.next();
+      if (event.deltaY < 0) mainCarousel.prev();
+
+      const scrollOvelay = document.querySelector('.scroll-overlay');
+      scrollOvelay.classList.add('d-none');
+    })
 
     const leftCol = document.querySelector('#left-col');
     setTimeout(() => {
