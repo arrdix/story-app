@@ -1,10 +1,18 @@
 @use '../vendors-extension/colors' as clr;
+@use '../vendors-extension/font' as fnt;
 
 // overriding bootstrap variables
 $primary: clr.$clr-primary;
 $secondary: clr.$clr-secondary;
 $dark: clr.$clr-dark;
 $form-feedback-invalid-color: clr.$clr-invalid;
+$font-weight-lighter: fnt.$font-weight-lighter;
+$font-weight-light: fnt.$font-weight-light;
+$font-weight-normal: fnt.$font-weight-normal;
+$font-weight-medium: fnt.$font-weight-medium;
+$font-weight-semibold: fnt.$font-weight-semibold;
+$font-weight-bold: fnt.$font-weight-bold;
+$font-weight-bolder: fnt.$font-weight-bolder;
 
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";

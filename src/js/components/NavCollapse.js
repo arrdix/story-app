@@ -17,7 +17,7 @@ export class NavCollapse extends LitLightDom {
 
   render() {
     return html`
-      <div class="col-3 d-flex justify-content-center align-items-center">
+      <div class="col-3 d-flex justify-content-center align-items-center fw-bold">
         <p>${this.title}</p>
       </div>
       <div class="col-9 text-dark d-flex flex-row justify-content-between mb-2 pb-2 px-5">

@@ -11,7 +11,7 @@ export class AboutContents extends LitLightDom {
   render() {
     return html`
       <div class="row text-center mb-3">
-        <h5 class="m-0 mb-2">
+        <h5 class="m-0 mb-2 fw-bold">
           ${msg(`Where Your Story Unfolds in a Snap!`)}
         </h5>
         <p class="fs-10">
@@ -21,7 +21,7 @@ export class AboutContents extends LitLightDom {
         </p>
       </div>
       <div class="row text-center mb-3">
-        <h5 class="m-0 mb-2">
+        <h5 class="m-0 mb-2 fw-bold">
           ${msg(`Features`)}
         </h5>
         <p class="fs-10">
@@ -33,7 +33,7 @@ export class AboutContents extends LitLightDom {
         </p>
       </div>
       <div class="row text-center mb-3">
-        <h5 class="m-0 mb-3">
+        <h5 class="m-0 mb-3 fw-bold">
           ${msg(`Technologies`)}
         </h5>
         <div class="d-flex justify-content-center align-items-center gap-2">

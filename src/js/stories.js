@@ -16,8 +16,8 @@ export function renderStories() {
       carouselItem.setAttribute('class', `carousel-item rounded-5 h-100 ${isFirstIndex ? " active" : ""}`);
       carouselItem.setAttribute('id', `${story.id}`);
       carouselItem.innerHTML = `
-        <div class="card text-light">
-          <img src="${story.photoUrl}" class="card-img object-fit-cover p-0" alt="Story Image">
+        <div class="card h-100 text-light">
+          <img src="${story.photoUrl}" class="card-img h-100 object-fit-cover p-0" alt="Story Image">
           <div class="card-backdrop position-absolute"></div>
           <div class="card-img-overlay">
             <div class="card-title d-flex justify-content-start ps-2 pt-2 gap-2">
