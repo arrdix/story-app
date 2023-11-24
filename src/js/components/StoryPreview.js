@@ -1,9 +1,11 @@
 import { html } from "lit";
 import { LitLightDom } from "./base/litLightDom";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
 export class StoryPreview extends LitLightDom {
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
   }
 
   render() {
@@ -16,11 +18,11 @@ export class StoryPreview extends LitLightDom {
             <img src="/julia-garner.jpg" class="rounded-pill border border-3 border-light w-5" alt="">
             <div class="d-flex flex-column">
               <p class="m-0">Julia Garner</p>
-              <p class="fs-12 m-0">Story Preview</p>
+              <p class="fs-12 m-0">${msg(`Story Preview`)}</p>
             </div>
           </div>
           <div class="card-body p-0 ps-2">
-            <p class="card-text fs-8" id="description-preview">Please write your story description.</p>
+            <p class="card-text fs-8" id="description-preview">${msg(`Please write your story description.`)}</p>
           </div>
         </div>
       </div>

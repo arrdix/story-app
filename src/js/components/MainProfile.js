@@ -1,5 +1,6 @@
 import { html } from "lit";
 import { LitLightDom } from "./base/litLightDom";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
 export class MainProfile extends LitLightDom {
   static properties = {
@@ -10,6 +11,7 @@ export class MainProfile extends LitLightDom {
 
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
   }
 
   render() {
@@ -22,7 +24,7 @@ export class MainProfile extends LitLightDom {
             <div class="row">
               <div class="col-12 d-flex justify-content-center align-items-end gap-2">
                 <p class="m-0 text-dark fs-6">@${this.username}</p>
-                <a href="/" class="btn p-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Log out">
+                <a href="/" class="btn p-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${msg(`Log out`)}">
                   <i class="bi bi-gear-fill fs-8"></i>
                 </a>
               </div>
@@ -40,8 +42,8 @@ export class MainProfile extends LitLightDom {
             </div>
             <div class="row text-center">
               <p class="fs-10">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus neque asperiores inventore vel doloribus amet 
-                soluta eius excepturi non sit?
+                ${msg(`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus neque asperiores inventore vel doloribus amet 
+                soluta eius excepturi non sit?`)}
               </p>
             </div>
           `

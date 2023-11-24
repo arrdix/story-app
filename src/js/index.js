@@ -6,7 +6,7 @@ import { initLogin } from './login';
 import { initHome } from './home';
 import { initNewPost } from './newPost';
 import { fetchDataFromAPI } from './dataSource';
-import { initAbout } from './components/about';
+import { initAbout } from './about';
 
 // activate tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
