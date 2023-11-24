@@ -6,8 +6,8 @@ export function initNavbar() {
 
   setTimeout(() => {
     btnMenu.click();
-  }, 1500);
+  }, 2000);
   setTimeout(() => {
     btnMenu.click();
-  }, 3500);
+  }, 4500);
 }

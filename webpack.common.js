@@ -28,6 +28,11 @@ module.exports = {
       filename: 'new-post.html',
       template: path.resolve(__dirname, 'src/views/new-post.html'),
     }),
+    new HtmlWebpackPlugin({
+      title: 'About',
+      filename: 'about.html',
+      template: path.resolve(__dirname, 'src/views/about.html'),
+    }),
     new CopyWebpackPlugin({
       patterns: [
         {
