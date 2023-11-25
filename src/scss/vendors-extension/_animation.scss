@@ -6,6 +6,14 @@
     transform: translateY(50%);
   }
 }
+@keyframes bounce {
+  from {
+    transform: translateY(-5%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 .transition-fade {
   transition: all 1s;
 }
@@ -41,7 +49,7 @@
   transition: transform .3s ease-in-out;
 
   &:hover {
-    transform: scale(1.5) translateY(-10%);
+    transform: translateY(-15%);
     transition: transform .3s ease-in-out;
   }
 }
@@ -55,4 +63,11 @@
 }
 .scrolling-element {
   animation: scroll 1s ease infinite alternate;
+}
+.bouncing-element {
+  animation: bounce 1s ease infinite alternate;
+
+  &:hover {
+    animation: bounce .5s ease infinite alternate;
+  }
 }

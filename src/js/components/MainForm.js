@@ -17,7 +17,7 @@ export class MainForm extends LitLightDom {
       <form class="needs-validation" id="${this.idName}" novalidate>
         ${this._isLoginPage()
           ? html`
-              <div class="mx-4 mb-2">
+              <div class="mx-4 mb-2 mt-5">
                 <input type="text" class="form-control form-control-sm fs-10" id="username" minlength="5" placeholder="Username" required>
                 <div class="invalid-feedback">${msg(`Please enter a valid username.`)}</div>
               </div>

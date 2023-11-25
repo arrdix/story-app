@@ -12,33 +12,17 @@
   height: 100%;
   box-shadow: 0px 250px 200px -150px rgb(0, 0, 0) inset;
 }
-.btn-check:checked + .btn,
-:not(.btn-check) + .btn:active,
-.btn:first-child:active,
-.btn.active,
-.btn.show {
-  border: 1px solid transparent !important;
-}
-.btn-primary {
-    color: #F7F7F7;
-    background-color: #2f2f2f;
-    border-color: #2f2f2f;
-}
-.btn-primary:hover, .btn-primary:active {
-    color: #2f2f2f;
-    background-color: #F7F7F7;
-    border-color: #F7F7F7;
-}
-.btn-secondary {
-    color: #2f2f2f;
-    background-color: transparent;
-    border-color: transparent;
-}
-.btn-secondary:hover, .btn-secondary:active {
-    color: #2f2f2f;
-    background-color: transparent;
-    border-color: transparent;
-}
 .carousel-indicators [data-bs-target] {
   border: none !important;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #cfcfcf;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(164, 164, 164);
+  border-radius: 6px;
+  border: 1px solid transparent;
 }

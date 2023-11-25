@@ -1,7 +1,6 @@
 import { html } from "lit";
 import { LitLightDom } from "./base/litLightDom";
 import { msg, updateWhenLocaleChanges } from "@lit/localize";
-import * as bootstrap from 'bootstrap';
 
 export class MainProfile extends LitLightDom {
   static properties = {
@@ -15,11 +14,7 @@ export class MainProfile extends LitLightDom {
     updateWhenLocaleChanges(this);
   }
 
-  render() {
-// activate tooltips
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-    
+  render() {    
     return html`
       ${this._isHomePage()
         ? html `

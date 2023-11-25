@@ -31,6 +31,8 @@ $more-font-sizes: (
   10: 1rem * 0.8,
   11: 1rem * 0.75,
   12: 1rem * 0.7,
+  xl: 1rem * 3,
+  xxl: 1rem * 4,
 );
 
 $font-sizes: map-merge($more-font-sizes, $font-sizes );
