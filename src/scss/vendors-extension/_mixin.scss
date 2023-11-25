@@ -1,0 +1,12 @@
+@mixin apply-button($color, $bg-color, $border) {
+  color: $color;
+  background-color: $bg-color;
+  border: $border;
+}
+
+@mixin flex-box($dir, $justify, $align) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+}

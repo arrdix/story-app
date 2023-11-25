@@ -1,0 +1,23 @@
+@use './mixin' as mixin;
+
+.btn-check:checked + .btn,
+:not(.btn-check) + .btn:active,
+.btn:first-child:active,
+.btn.active,
+.btn.show {
+  border: 1px solid transparent !important;
+}
+.btn-primary {
+  @include mixin.apply-button(#f7f7f7, #2f2f2f, 1px solid #2f2f2f);
+
+  &:hover, &:active {
+    @include mixin.apply-button(#2f2f2f, #f7f7f7, 1px solid #f7f7f7);
+  }
+}
+.btn-secondary {
+  @include mixin.apply-button(#2f2f2f, transparent, 1px solid transparent);
+
+  &:hover, &:active {
+    @include mixin.apply-button(#3e3e3e, transparent, 1px solid transparent);
+  }
+}
