@@ -16,8 +16,8 @@ export class MainProfile extends LitLightDom {
 
   render() {    
     return html`
-      <div class="row justify-content-center mb-2">
-        <img src="/${this.image}" class="w-50 rounded-pill border border-3 border-light p-0 d-none d-lg-block" alt="Profile Picture">
+      <div class="row justify-content-center align-items-end mb-2">
+        <img src="/${this.image}" class="w-50 rounded-pill border border-3 border-light p-0 d-none d-md-block" alt="Profile Picture">
       </div>
       <div class="row">
         <div class="col-12 d-flex justify-content-center align-items-center gap-1">

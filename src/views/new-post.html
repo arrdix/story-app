@@ -8,7 +8,8 @@
 <body class="bg-secondary">
   <div class="container-sm position-absolute top-50 start-50 translate-middle bg-primary rounded-5 shadow-1">
     <div class="main-wrapper row vh-70 overflow-hidden">
-      <div class="col-md-3 h-100 overflow-auto d-flex flex-column justify-content-between align-items-center py-5 pop-element" id="left-col">
+      <floating-navbar></floating-navbar>
+      <div class="col-12 col-md-5 col-xl-3 h-100 overflow-auto d-flex flex-column justify-center-center justify-content-md-between align-items-center py-5 gap-5 pop-element" id="left-col">
         <app-logo></app-logo>
         <div class="row d-flex flex-column justify-content-center align-items-center">
           <div class="row mb-3 p-0">
@@ -28,12 +29,12 @@
         </div>
         <div class="row">
           <nav-buttons
-            class="navbar d-flex justify-content-center rounded-pill bg-primary w-100 p-0"
+            class="navbar d-none d-md-flex justify-content-center rounded-pill bg-primary w-100 p-0"
           >
           </nav-buttons>
         </div>
       </div>
-      <div class="col-md-9 h-100 overflow-auto p-0 border border-7 border-start-0 border-primary rounded-5 pop-element-reverse" id="main-col">
+      <div class="col-12 col-md-7 col-xl-9 d-none d-md-block h-100 overflow-auto p-0 border border-7 border-start-0 border-primary rounded-5 pop-element-reverse" id="main-col">
         <story-preview></story-preview>
       </div>
     </div>

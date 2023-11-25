@@ -8,7 +8,8 @@
 <body class="bg-secondary">
   <div class="container-sm position-absolute top-50 start-50 translate-middle bg-primary rounded-5 shadow-1">
     <div class="main-wrapper row vh-70 overflow-hidden">
-      <div class="col-md-3 h-100 overflow-auto d-flex flex-column justify-content-between align-items-center py-5 pop-element" id="left-col">
+      <floating-navbar></floating-navbar>
+      <div class="col-12 col-md-4 col-xl-3 h-100 d-none overflow-auto d-md-flex flex-column justify-content-between align-items-center py-5 pop-element" id="left-col">
         <app-logo></app-logo>
         <main-profile
           name="Julia Garner"
@@ -21,18 +22,18 @@
         >
         </nav-buttons>
       </div>
-      <div class="col-md-9 h-100 overflow-auto p-0 overflow-hidden pop-element-reverse" id="main-col">
+      <div class="col-12 col-md-8 col-xl-9 h-100 d-md-block overflow-auto p-0 overflow-hidden pop-element-reverse" id="main-col">
         <div
           id="mainCarousel"
-          class="carousel slide vertical h-100 position-relative p-0"
+          class="carousel slide vertical h-100 position-relative mouse-scroll p-0"
           data-bs-ride="false"
         >
-          <a href="/new-post.html" class="btn-secondary position-absolute rounded-circle bottom-0 end-0 p-0 me-5 mb-5 z-1 bouncing-element">
+          <a href="/new-post.html" class="btn-secondary position-absolute d-none d-md-block rounded-circle bottom-0 end-0 p-0 me-5 mb-5 z-1 bouncing-element">
             <i class="bi bi-plus-circle-fill text-light fs-xxl shadow-1"></i>
           </a>
           <div class="carousel-indicators me-4"></div>
-          <div class="carousel-inner h-100 border rounded-5 border-7 border-start-0 border-primary">
-            <div class="scroll-overlay rounded-5 position-absolute top-50 start-50 translate-middle d-flex justify-content-center align-items-center gap-1 w-100 h-100 bg-dark opacity-75 z-2">
+          <div class="carousel-inner h-100 carousel-border adaptive-rounded-5">
+            <div class="scroll-overlay adaptive-rounded-5 position-absolute top-50 start-50 translate-middle d-flex justify-content-center align-items-center gap-1 w-100 h-100 bg-dark opacity-75 z-2">
               <i class="bi bi-mouse-fill text-light fs-1"></i>  
               <p class="fw-bold text-light m-0 scrolling-element"> Please scroll here</p>
             </div>

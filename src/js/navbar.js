@@ -4,10 +4,12 @@ export function initNavbar() {
     btnMenu.classList.toggle('rotate-active');
   })
 
-  setTimeout(() => {
-    btnMenu.click();
-  }, 2000);
-  setTimeout(() => {
-    btnMenu.click();
-  }, 4500);
+  if (window.innerWidth > 768) {
+    setTimeout(() => {
+      btnMenu.click();
+    }, 2000);
+    setTimeout(() => {
+      btnMenu.click();
+    }, 4500);
+  }
 }

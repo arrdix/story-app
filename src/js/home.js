@@ -30,5 +30,17 @@ export function initHome() {
 
     renderStories();
     initNavbar();
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 768) {
+        document.querySelectorAll('[device]').forEach(element => {
+          element.setAttribute('device', 'mobile');
+        })
+      } else {
+        document.querySelectorAll('[device]').forEach(element => {
+          element.setAttribute('device', '');
+        })
+      }
+    })
   })
 }

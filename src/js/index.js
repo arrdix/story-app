@@ -37,4 +37,21 @@ function initPages() {
 
   const route = detectRoute();
   route();
+
+  const mainWrapper = document.querySelector('.main-wrapper');
+  window.addEventListener('resize', () => {
+    adjustWrapperSize();
+  })
+
+  function adjustWrapperSize() {
+    if (window.innerWidth < 768) {
+      mainWrapper.classList.remove('vh-70');
+      mainWrapper.classList.add('vh-100');
+    } else {
+      mainWrapper.classList.remove('vh-100');
+      mainWrapper.classList.add('vh-70');
+    }
+  }
+
+  adjustWrapperSize();
 }

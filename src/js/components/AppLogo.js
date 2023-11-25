@@ -1,4 +1,4 @@
-import { html } from "lit";
+import { css, html } from "lit";
 import { LitLightDom } from "./base/litLightDom";
 
 export class AppLogo extends LitLightDom {
@@ -8,16 +8,10 @@ export class AppLogo extends LitLightDom {
 
   render() {
     return html`
-      <div class="row justify-content-md-center">
-        <img src="/logo-long-dark.png" class="${this._isAboutPage() ? "w-75" : "w-50"}" alt="StoryApp Logo">
+      <div class="row justify-content-center">
+        <img src="/logo-long-dark.png" class="logo w-50" alt="StoryApp Logo">
       </div>
     `;
-  }
-
-  _isAboutPage() {
-    const currentPage = window.location.pathname;
-    const aboutPage = '/about.html';
-    return currentPage === aboutPage;
   }
 }
 

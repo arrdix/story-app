@@ -15,6 +15,21 @@
 .carousel-indicators [data-bs-target] {
   border: none !important;
 }
+.carousel-border {
+  border: 15px solid #f7f7f7;
+  border-left: none;
+
+  @media screen and (max-width: 768px) {
+    border: none;
+  }
+}
+.adaptive-rounded-5 {
+  border-radius: 2rem;
+
+  @media screen and (max-width: 768px) {
+    border-radius: 0 !important;
+  }
+}
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -25,4 +40,23 @@
   background-color: rgb(164, 164, 164);
   border-radius: 6px;
   border: 1px solid transparent;
+}
+.mouse-scroll {
+  &:hover {
+    cursor: all-scroll;
+  }
+}
+.dropdown-toggle::after {
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  } 
+}
+.logo {
+  @media screen and (max-width: 768px) {
+    width: 40% !important;
+  }
+}
+.stories-dp {
+  width: 50px !important;
+  height: 50px !important;
 }

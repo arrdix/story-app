@@ -4,7 +4,6 @@ const moment = require('moment');
 export function renderStories() {
   function renderCard() {
     const stories = LocalStorage.stories;
-    console.log(stories);
     stories.forEach((story, index) => {
       const isFirstIndex = index == 0;
       const isOwner = story.name === 'Julia Garner';
@@ -13,7 +12,7 @@ export function renderStories() {
       const formattedDate = moment(rawDate).format('MMMM D, YYYY h:mm A');
       const carouselInner = document.querySelector('.carousel-inner');
       const carouselItem = document.createElement('div');
-      carouselItem.setAttribute('class', `carousel-item rounded-5 h-100 ${isFirstIndex ? " active" : ""}`);
+      carouselItem.setAttribute('class', `carousel-item adaptive-rounded-5 h-100 ${isFirstIndex ? " active" : ""}`);
       carouselItem.setAttribute('id', `${story.id}`);
       carouselItem.innerHTML = `
         <div class="card h-100 text-light">
@@ -21,8 +20,8 @@ export function renderStories() {
           <div class="card-backdrop position-absolute top-50 start-50 translate-middle"></div>
           <div class="card-img-overlay">
             <div class="card-title d-flex justify-content-start ps-2 pt-2 gap-2">
-              <img src="${isOwner ? "/julia-garner.jpg" : story.photoUrl}" class="rounded-pill border border-3 border-light w-5" alt="">
-              <div class="d-flex flex-column">
+              <img src="${isOwner ? "/julia-garner.jpg" : story.photoUrl}" class="stories-dp rounded-circle border border-3 border-light" alt="">
+              <div class="d-flex flex-column justify-content-center">
                 <p class="m-0">${story.name}</p>
                 <p class="fs-12 m-0">${formattedDateFromNow} | ${formattedDate}</p>
               </div>

@@ -14,6 +14,10 @@ export class AboutProfile extends LitElement {
         justify-content: center;
         margin-bottom: 2rem;
 
+        @media screen and (max-width: 768px) {
+          padding-top: 3rem;
+        }
+
         .about-image {
           width: 60%;
           border-radius: 50%;
