@@ -8,3 +8,4 @@ import './NavButtons';
 
 import './MainForm';
 import './MainProfile';
+import './AboutProfile';

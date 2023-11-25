@@ -1,8 +1,35 @@
-import { html } from "lit";
-import { LitLightDom } from "./base/litLightDom";
+import { LitElement, html, css } from "lit";
 import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
-export class AboutContents extends LitLightDom {
+export class AboutContents extends LitElement {
+  static styles = [
+    css`
+      .desc-wrapper, .features-wrapper, .tech-wrapper {
+        text-align: center;
+
+        .desc-title, .features-title, .tech-title {
+          font-size: 1rem;
+          font-weight: 700;
+          margin-block: 1rem;
+        }
+
+        .desc-text, .features-text {
+          font-size: 0.8rem;
+          margin-bottom: 2rem;
+        }
+      }
+      .tech-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .tech-image {
+        width: 10%;
+      }
+    `
+  ]
+
   constructor() {
     super();
     updateWhenLocaleChanges(this);
@@ -10,21 +37,21 @@ export class AboutContents extends LitLightDom {
 
   render() {
     return html`
-      <div class="row text-center mb-3">
-        <h5 class="m-0 mb-2 fw-bold">
-          ${msg(`Where Your Story Unfolds in a Snap!`)}
+      <div class="desc-wrapper">
+        <h5 class="desc-title">
+          ${msg(`Story Unfolds in a Snap!`)}
         </h5>
-        <p class="fs-10">
+        <p class="desc-text">
           ${(`StoryApp allows users to share moments, thoughts, and updates with a captivating blend of images and text. 
-          With a user-friendly interface, StoryApp provides a seamless and enjoyable experience for sharing your life's 
-          highlights in a unique and compelling way!`)}
+          With a user-friendly interface!`)}
         </p>
       </div>
-      <div class="row text-center mb-3">
-        <h5 class="m-0 mb-2 fw-bold">
+
+      <div class="features-wrapper">
+        <h5 class="features-title">
           ${msg(`Features`)}
         </h5>
-        <p class="fs-10">
+        <p class="features-text">
           ${(`Scrollable carousel`)}<br>
           ${msg(`Dynamic stories data`)} <br>
           ${msg(`Post new story`)} <br>
@@ -32,17 +59,18 @@ export class AboutContents extends LitLightDom {
           ${msg(`Login`)} <br>
         </p>
       </div>
-      <div class="row text-center mb-3">
-        <h5 class="m-0 mb-3 fw-bold">
+
+      <div class="tech-wrapper">
+        <h5 class="tech-title">
           ${msg(`Technologies`)}
         </h5>
-        <div class="d-flex justify-content-center align-items-center gap-2">
-          <img src="/javascript-dark.png" class="w-10" alt="">
-          <img src="/bootstrap-dark.png" class="w-10" alt="">
-          <img src="/sass-dark.png" class="w-10" alt="">
-          <img src="/lit-dark.png" class="w-10" alt="">
-          <img src="/git-dark.png" class="w-10" alt="">
-          <img src="/html-dark.png" class="w-10" alt="">
+        <div class="tech-content">
+          <img src="/javascript-dark.png" class="tech-image" alt="">
+          <img src="/bootstrap-dark.png" class="tech-image" alt="">
+          <img src="/sass-dark.png" class="tech-image" alt="">
+          <img src="/lit-dark.png" class="tech-image" alt="">
+          <img src="/git-dark.png" class="tech-image" alt="">
+          <img src="/html-dark.png" class="tech-image" alt="">
         </div>
       </div>
     `;
