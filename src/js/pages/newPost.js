@@ -45,7 +45,9 @@ export function initNewPost() {
       }
       form.classList.add('was-validated');
 
-      generateNewStory(image.files[0].name, description.value)
+      if (image.files[0]) {
+        generateNewStory(image.files[0].name, description.value);
+      }
     })
 
     function generateNewStory(photoUrl, description) {

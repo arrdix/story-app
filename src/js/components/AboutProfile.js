@@ -21,6 +21,7 @@ export class AboutProfile extends LitElement {
         .about-image {
           width: 60%;
           border-radius: 50%;
+          border: 1px solid #272727;
         }
       }
       .name-wrapper {
@@ -59,8 +60,7 @@ export class AboutProfile extends LitElement {
       </div>
       <div class="desc-wrapper">
         <p class="about-desc">
-          ${msg(`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus neque asperiores inventore vel doloribus amet 
-          soluta eius excepturi non sit?`)}
+          ${msg(`I'm a passionate front-end developer who loves to connecting the dots between design and functionality.`)}
         </p>
       </div>
     `;

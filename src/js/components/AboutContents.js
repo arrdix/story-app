@@ -42,8 +42,7 @@ export class AboutContents extends LitElement {
           ${msg(`Story Unfolds in a Snap!`)}
         </h5>
         <p class="desc-text">
-          ${(`StoryApp allows users to share moments, thoughts, and updates with a captivating blend of images and text. 
-          With a user-friendly interface!`)}
+          ${(`With a user-friendly interface, StoryApp allows users to share moments, thoughts, and updates with a captivating blend of images and text!`)}
         </p>
       </div>
 
