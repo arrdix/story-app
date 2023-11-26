@@ -7,25 +7,8 @@ import { initHome } from './pages/home';
 import { initNewPost } from './pages/newPost';
 import { fetchDataFromAPI } from './utils/dataSource';
 import { initAbout } from './pages/about';
+import { setLocale } from './localization';
 
-// activate toast
-const toastLiveExample = document.getElementById('mainToast')
-const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-setTimeout(() => {
-  toastBootstrap.show()
-}, 1000);
-
-// routing
-const routes = {
-  '/': initLogin,
-  '/home.html': initHome,
-  '/new-post.html': initNewPost,
-  '/about.html': initAbout,
-}
-
-function detectRoute() {
-  return routes[window.location.pathname];
-}
 window.addEventListener('DOMContentLoaded', initPages);
 
 function initPages() {
@@ -54,4 +37,35 @@ function initPages() {
   }
 
   adjustWrapperSize();
+  setLanguage();
+}
+
+// activate toast
+const toastLiveExample = document.getElementById('mainToast')
+const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+setTimeout(() => {
+  toastBootstrap.show()
+}, 1000);
+
+// routing
+const routes = {
+  '/': initLogin,
+  '/home.html': initHome,
+  '/new-post.html': initNewPost,
+  '/about.html': initAbout,
+}
+
+function detectRoute() {
+  return routes[window.location.pathname];
+}
+
+function setLanguage() {
+  const defaultLanguage = 'en';
+  const currentLanguge = sessionStorage.getItem('lang') || defaultLanguage;
+  const url = new URL(window.location.href);
+
+  url.searchParams.set('lang', currentLanguge);
+  setLocale(currentLanguge);
+
+  window.history.pushState(null, '', url.toString());
 }

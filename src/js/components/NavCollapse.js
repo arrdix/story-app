@@ -16,6 +16,8 @@ export class NavCollapse extends LitLightDom {
   }
 
   render() {
+    this._setDropdownLangaugeTitle();
+
     return html`
       <div class="col-3 d-flex justify-content-center align-items-center fw-bold">
         <p>${this.title}</p>
@@ -43,16 +45,37 @@ export class NavCollapse extends LitLightDom {
   }
 
   _localeChanged(event) {
-    this.lang = event.target.textContent;
     const rawNewLocale = event.target;
-    const newLocale = rawNewLocale.getAttribute('aria-label').toUpperCase();
+    const newLocale = rawNewLocale.getAttribute('aria-label');
  
     if (newLocale !== getLocale()) {
       const url = new URL(window.location.href);
       url.searchParams.set('lang', newLocale);
  
       window.history.pushState(null, '', url.toString());
-      setLocaleFromUrl();
+      setLocaleFromUrl(newLocale);
+      this._setLanguage(newLocale);
+    }
+  }
+
+  _setLanguage(lang) {
+    sessionStorage.setItem('lang', lang)
+  }
+
+  _setDropdownLangaugeTitle() {
+    const url = new URL(window.location.href);
+    const lang = url.searchParams.get('lang');
+    
+    switch(lang) {
+      case 'id':
+        this.lang = 'Indonesia (ID)'
+        break;
+      case 'en':
+        this.lang = 'English (EN)'
+        break;
+      case 'de':
+        this.lang = 'German (DE)'
+        break;
     }
   }
 }
