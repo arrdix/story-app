@@ -1,101 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file target-language="id" source-language="en" original="lit-localize-inputs" datatype="plaintext">
-    <body>
-      <trans-unit id="s225ba2a1eecca3aa">
-        <source>Story Preview</source>
-        <target>Pratinjau Story</target>
-      </trans-unit>
-      <trans-unit id="s4b5d8dcf2271147e">
-        <source>Please write your story description.</source>
-        <target>Silakan tulis deskripsi story Anda.</target>
-      </trans-unit>
-      <trans-unit id="saa1333fab5b6cc96">
-        <source>Where Your Story Unfolds in a Snap!</source>
-        <target>Tempat Cerita Anda Terbentang dalam Sekejap!</target>
-      </trans-unit>
-      <trans-unit id="s6a0bc0ce56a9ae4a">
-        <source>Features</source>
-        <target>Fitur</target>
-      </trans-unit>
-      <trans-unit id="s8da135fdef768225">
-        <source>Dynamic stories data</source>
-        <target>Data story dinamis</target>
-      </trans-unit>
-      <trans-unit id="s2fcb7d0d8c22a3d8">
-        <source>Post new story</source>
-        <target>Buat story baru</target>
-      </trans-unit>
-      <trans-unit id="s47e06d5dc1bb2c0a">
-        <source>Story preview</source>
-        <target>Pratinjau story</target>
-      </trans-unit>
-      <trans-unit id="sc8da3cc71de63832">
-        <source>Login</source>
-        <target>Masuk</target>
-      </trans-unit>
-      <trans-unit id="s4625e5cafb0ec8c7">
-        <source>Technologies</source>
-        <target>Teknologi</target>
-      </trans-unit>
-      <trans-unit id="s6abb1cd87fe0114e">
-        <source>Home</source>
-        <target>Beranda</target>
-      </trans-unit>
-      <trans-unit id="sf6f5d8ff2a4899c5">
-        <source>New Post</source>
-        <target>Buat Story</target>
-      </trans-unit>
-      <trans-unit id="s0487f33d9ddaabde">
-        <source>About</source>
-        <target>Tentang</target>
-      </trans-unit>
-      <trans-unit id="s4b29b29baefcf90e">
-        <source>Please enter a valid username.</source>
-        <target>Tolong masukkan nama pengguna yang valid.</target>
-      </trans-unit>
-      <trans-unit id="se3f5b5d9160870c1">
-        <source>Please enter a valid password.</source>
-        <target>Tolong masukkan kata sandi yang valid.</target>
-      </trans-unit>
-      <trans-unit id="s85366fac18679f28">
-        <source>Forgot password?</source>
-        <target>Lupa kata sandi?</target>
-      </trans-unit>
-      <trans-unit id="scb04435672ac5410">
-        <source>Log in</source>
-        <target>Masuk</target>
-      </trans-unit>
-      <trans-unit id="scad07cc65ad2fb30">
-        <source>Don't have an account?</source>
-        <target>Belum punya akun?</target>
-      </trans-unit>
-      <trans-unit id="s5e6b698a2ec87331">
-        <source>Sign up</source>
-        <target>Daftar</target>
-      </trans-unit>
-      <trans-unit id="sba1ea15d0a81995b">
-        <source>Upload a photo</source>
-        <target>Unggah foto</target>
-      </trans-unit>
-      <trans-unit id="s1dee9519bd890fdc">
-        <source>Please upload your story photo.</source>
-        <target>Silakan unggah foto story Anda.</target>
-      </trans-unit>
-      <trans-unit id="sb357ea19a722d827">
-        <source>Post</source>
-        <target>Kirim</target>
-      </trans-unit>
-      <trans-unit id="sb64127e4e4f0b575">
-        <source>Log out</source>
-        <target>Keluar</target>
-      </trans-unit>
-      <trans-unit id="s339556c8653a22cb">
-        <source>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus neque asperiores inventore vel doloribus amet 
+<file target-language="id" source-language="en" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="s225ba2a1eecca3aa">
+  <source>Story Preview</source>
+</trans-unit>
+<trans-unit id="s4b5d8dcf2271147e">
+  <source>Please write your story description.</source>
+</trans-unit>
+<trans-unit id="sbb1aa5c8ed3a72a2">
+  <source>Story Unfolds in a Snap!</source>
+</trans-unit>
+<trans-unit id="s6a0bc0ce56a9ae4a">
+  <source>Features</source>
+</trans-unit>
+<trans-unit id="s8da135fdef768225">
+  <source>Dynamic stories data</source>
+</trans-unit>
+<trans-unit id="s2fcb7d0d8c22a3d8">
+  <source>Post new story</source>
+</trans-unit>
+<trans-unit id="s47e06d5dc1bb2c0a">
+  <source>Story preview</source>
+</trans-unit>
+<trans-unit id="sc8da3cc71de63832">
+  <source>Login</source>
+</trans-unit>
+<trans-unit id="s4625e5cafb0ec8c7">
+  <source>Technologies</source>
+</trans-unit>
+<trans-unit id="s6abb1cd87fe0114e">
+  <source>Home</source>
+</trans-unit>
+<trans-unit id="sf6f5d8ff2a4899c5">
+  <source>New Post</source>
+</trans-unit>
+<trans-unit id="s0487f33d9ddaabde">
+  <source>About</source>
+</trans-unit>
+<trans-unit id="s4b29b29baefcf90e">
+  <source>Please enter a valid username.</source>
+</trans-unit>
+<trans-unit id="se3f5b5d9160870c1">
+  <source>Please enter a valid password.</source>
+</trans-unit>
+<trans-unit id="s85366fac18679f28">
+  <source>Forgot password?</source>
+</trans-unit>
+<trans-unit id="scb04435672ac5410">
+  <source>Log in</source>
+</trans-unit>
+<trans-unit id="scad07cc65ad2fb30">
+  <source>Don't have an account?</source>
+</trans-unit>
+<trans-unit id="s5e6b698a2ec87331">
+  <source>Sign up</source>
+</trans-unit>
+<trans-unit id="sba1ea15d0a81995b">
+  <source>Upload a photo</source>
+</trans-unit>
+<trans-unit id="s1dee9519bd890fdc">
+  <source>Please upload your story photo.</source>
+</trans-unit>
+<trans-unit id="sb357ea19a722d827">
+  <source>Post</source>
+</trans-unit>
+<trans-unit id="s7b45b5160845a0ab">
+  <source>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus neque asperiores inventore vel doloribus amet 
           soluta eius excepturi non sit?</source>
-        <target>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus neque asperiores inventore vel doloribus amet 
-          soluta eius excepturi non sit?</target>
-      </trans-unit>
-    </body>
-  </file>
+</trans-unit>
+</body>
+</file>
 </xliff>

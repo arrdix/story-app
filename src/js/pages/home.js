@@ -1,6 +1,6 @@
 import * as bootstrap from 'bootstrap';
-import { initNavbar } from "./navbar";
-import { renderStories } from "./stories";
+import { initNavbar } from "../utils/navbar";
+import { renderStories } from '../utils/stories';
 
 export function initHome() {
   window.addEventListener('load', () => {

@@ -1,5 +1,5 @@
-import { initNavbar } from "./navbar";
-import { LocalStorage } from "./localStorage";
+import { initNavbar } from "../utils/navbar";
+import { LocalStorage } from "../utils/localStorage";
 
 export function initNewPost() {
   window.addEventListener('load', () => {

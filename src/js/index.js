@@ -2,11 +2,11 @@ import '../scss/styles.scss';
 import * as bootstrap from 'bootstrap';
 import { components } from './components';
 
-import { initLogin } from './login';
-import { initHome } from './home';
-import { initNewPost } from './newPost';
-import { fetchDataFromAPI } from './dataSource';
-import { initAbout } from './about';
+import { initLogin } from './pages/login';
+import { initHome } from './pages/home';
+import { initNewPost } from './pages/newPost';
+import { fetchDataFromAPI } from './utils/dataSource';
+import { initAbout } from './pages/about';
 
 // activate toast
 const toastLiveExample = document.getElementById('mainToast')

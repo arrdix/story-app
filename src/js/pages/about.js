@@ -1,4 +1,4 @@
-import { initNavbar } from "./navbar";
+import { initNavbar } from "../utils/navbar";
 
 export function initAbout() {
   window.addEventListener('load', () => {
