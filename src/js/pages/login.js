@@ -1,3 +1,5 @@
+import Auth from "../network/auth";
+
 export function initLogin() {
   window.addEventListener('load', () => {
     const leftCol = document.querySelector('#left-col');
@@ -15,7 +17,7 @@ export function initLogin() {
 
     function handleSubmit(event) {
       event.preventDefault();
-      const name = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
       if (!form.checkValidity()) {
@@ -23,9 +25,18 @@ export function initLogin() {
         event.stopPropagation();
       }
       form.classList.add('was-validated')
+      getLogged(email, password)
+    }
 
-      if (name === 'julia' && password === 'garner') {
+    async function getLogged(email, password) {
+      try {
+        const response = await Auth.login({
+          email: email,
+          password: password
+        })
         window.location.href = '/home.html';
+      } catch (error) {
+        window.alert(error);
       }
     }
   })

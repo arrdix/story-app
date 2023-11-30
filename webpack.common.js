@@ -18,6 +18,11 @@ module.exports = {
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/views/index.html'),
     }),
+    new HtmlWebpackPlugin({ 
+      title: 'Register',
+      filename: 'register.html',
+      template: path.resolve(__dirname, 'src/views/register.html'),
+    }),
     new HtmlWebpackPlugin({
       title: 'Home',
       filename: 'home.html',

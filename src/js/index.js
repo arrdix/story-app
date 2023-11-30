@@ -8,6 +8,7 @@ import { initNewPost } from './pages/newPost';
 import { fetchDataFromAPI } from './utils/dataSource';
 import { initAbout } from './pages/about';
 import { setLocale } from './localization';
+import { initRegister } from './pages/register';
 
 window.addEventListener('DOMContentLoaded', initPages);
 
@@ -53,6 +54,7 @@ const routes = {
   '/home.html': initHome,
   '/new-post.html': initNewPost,
   '/about.html': initAbout,
+  '/register.html': initRegister,
 }
 
 function detectRoute() {
