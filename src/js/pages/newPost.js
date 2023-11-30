@@ -63,7 +63,7 @@ export function initNewPost() {
       }
 
       LocalStorage.storeData(newStory);
-      window.location.href = '/home.html';
+      window.location.href = '/';
     }
 
     function generateRandomID(length) {

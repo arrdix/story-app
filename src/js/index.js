@@ -50,10 +50,10 @@ setTimeout(() => {
 
 // routing
 const routes = {
-  '/': initLogin,
-  '/home.html': initHome,
+  '/': initHome,
   '/new-post.html': initNewPost,
   '/about.html': initAbout,
+  '/login.html': initLogin,
   '/register.html': initRegister,
 }
 

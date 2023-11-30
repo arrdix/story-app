@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ 
-      title: 'Login',
+      title: 'Home',
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/views/index.html'),
     }),
@@ -24,9 +24,9 @@ module.exports = {
       template: path.resolve(__dirname, 'src/views/register.html'),
     }),
     new HtmlWebpackPlugin({
-      title: 'Home',
-      filename: 'home.html',
-      template: path.resolve(__dirname, 'src/views/home.html'),
+      title: 'Login',
+      filename: 'login.html',
+      template: path.resolve(__dirname, 'src/views/login.html'),
     }),
     new HtmlWebpackPlugin({
       title: 'New Post',
