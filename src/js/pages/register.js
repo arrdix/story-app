@@ -30,12 +30,14 @@ export function initRegister() {
 
   async function getRegistered(name, email, password) {
     try {
+      const registerSpinner = document.getElementById('register-spinner');
+      registerSpinner.classList.remove('d-none');
       const response = await Auth.register({
         name: name,
         email: email,
         password: password,
       })
-      window.location.href = '/home.html';
+      window.location.href = '/login.html';
     } catch (error) {
       window.alert(error);
     }

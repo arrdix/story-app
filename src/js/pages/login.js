@@ -30,11 +30,13 @@ export function initLogin() {
 
     async function getLogged(email, password) {
       try {
+        const loginSpinner = document.getElementById('login-spinner');
+        loginSpinner.classList.remove('d-none');
         const response = await Auth.login({
           email: email,
           password: password
         })
-        window.location.href = '/home.html';
+        window.location.href = '/';
       } catch (error) {
         window.alert(error);
       }

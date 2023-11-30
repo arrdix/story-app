@@ -29,7 +29,10 @@ export class MainForm extends LitLightDom {
               <a href="" class="link-dark link-opacity-75-hover link-underline-opacity-0 fs-10">${msg(`Forgot password?`)}</a></p>
             </div>
             <div class="d-grid mx-4 mb-2">
-              <button class="btn btn-dark fs-8 fw-1" type="submit">${msg(`Log in`)}</button>
+              <button class="btn btn-dark fs-8 fw-1" type="submit">
+                <span class="spinner-border spinner-border-sm d-none" id="login-spinner" aria-hidden="true"></span>
+                <span role="status">${msg(`Log in`)}</span>
+              </button>
             </div>
             <div class="mx-4 mb-2 text-dark d-flex justify-content-center">
               <p class="fs-10">${msg(`Don't have an account?`)} <a href="/register.html" class="link-dark link-opacity-75-hover link-offset-1">${msg(`Sign up`)}</a>.</p>
@@ -52,10 +55,13 @@ export class MainForm extends LitLightDom {
               <div class="invalid-feedback">${msg(`Please enter a valid password.`)}</div>
             </div>
             <div class="d-grid mx-4 mb-2">
-              <button class="btn btn-dark fs-8 fw-1" type="submit">${msg(`Sign Up`)}</button>
+              <button class="btn btn-dark fs-8 fw-1" type="submit">
+                <span class="spinner-border spinner-border-sm d-none" id="register-spinner" aria-hidden="true"></span>
+                <span role="status">${msg(`Sign Up`)}</span>
+              </button>
             </div>
             <div class="mx-4 mb-2 text-dark d-flex justify-content-center">
-              <p class="fs-10">${msg(`Already have an account?`)} <a href="/" class="link-dark link-opacity-75-hover link-offset-1">${msg(`Log in`)}</a>.</p>
+              <p class="fs-10">${msg(`Already have an account?`)} <a href="/login.html" class="link-dark link-opacity-75-hover link-offset-1">${msg(`Log in`)}</a>.</p>
             </div>
           </form>
         `;
