@@ -46,24 +46,31 @@ export function initNewPost() {
       form.classList.add('was-validated');
 
       if (image.files[0]) {
-        generateNewStory(image.files[0].name, description.value);
+        generateNewStory(
+          image.files[0].name,
+          description.value,
+          generateRandomLat(), 
+          generateRandomLon(),
+        );
       }
     })
 
-    function generateNewStory(photoUrl, description) {
+    function generateNewStory(photoUrl, description, lat, lon) {
       const currentDate = new Date();
       const iso8601Format = currentDate.toISOString();
 
       const newStory = {
-        id: generateRandomID(16),
-        name: 'Julia Garner',
+        // id: generateRandomID(16),
+        // createdAt: iso8601Format,
         description: description,
         photoUrl: `/${photoUrl}`,
-        createdAt: iso8601Format
+        lat: lat,
+        lon: lon,
       }
 
-      LocalStorage.storeData(newStory);
-      window.location.href = '/';
+      console.log(newStory);
+      // LocalStorage.storeData(newStory);
+      // window.location.href = '/';
     }
 
     function generateRandomID(length) {
@@ -76,6 +83,24 @@ export function initNewPost() {
       }
 
       return `story-${result}`;
+    }
+
+    function generateRandomLat() {
+      let randomLat;
+      for (let i = 0; i < 90; i++) {
+        randomLat = Math.random() * i;
+      }
+      if (randomLat < 45) randomLat *= -1;
+      return randomLat.toFixed(6);
+    }
+
+    function generateRandomLon() {
+      let randomLon;
+      for (let i = 0; i < 180; i++) {
+        randomLon = Math.random() * i;
+      }
+      if (randomLon < 90) randomLon *= -1;
+      return randomLon.toFixed(6);
     }
 
     initNavbar();

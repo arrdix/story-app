@@ -22,7 +22,7 @@ export class MainProfile extends LitLightDom {
       <div class="row">
         <div class="col-12 d-flex justify-content-center align-items-center gap-1">
           <p class="m-0 text-dark fs-8 fw-light">@${this.username}</p>
-          <a href="/login.html" class="btn btn-logout p-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Log out">
+          <a href="/login.html" class="btn btn-logout p-0" id="btn-logout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Log out">
             <i class="bi bi-gear-fill fs-8"></i>
           </a>
         </div>

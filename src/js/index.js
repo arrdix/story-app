@@ -9,36 +9,52 @@ import { fetchDataFromAPI } from './utils/dataSource';
 import { initAbout } from './pages/about';
 import { setLocale } from './localization';
 import { initRegister } from './pages/register';
+import { checkUserAuth } from './auth/check-user-auth';
+import TokenUtils from './utils/tokenUtils';
+import Config from './config/config';
 
 window.addEventListener('DOMContentLoaded', initPages);
 
 function initPages() {
+  const route = detectRoute();
+  route();
+
+  fetchStoriesData()
+  logOutHandler()
+  adjustWrapperSize();
+  setLanguage();
+
+  checkUserAuth.checkLoginState();
+}
+
+function fetchStoriesData() {
   const isFetched = localStorage.getItem('fetched');
   if (!isFetched) {
     fetchDataFromAPI();
     localStorage.setItem('fetched', true);
   }
+}
 
-  const route = detectRoute();
-  route();
+// logout button handler
+function logOutHandler() {
+  const logOutBtn = document.getElementById('btn-logout');
+  logOutBtn?.addEventListener('click', () => {
+    TokenUtils.destroyUserToken(Config.USER_TOKEN_KEY);
+  })
+}
 
+// adjust wrapper height on small screen
+function adjustWrapperSize() {
   const mainWrapper = document.querySelector('.main-wrapper');
   window.addEventListener('resize', () => {
-    adjustWrapperSize();
-  })
-
-  function adjustWrapperSize() {
     if (window.innerWidth < 768) {
-      mainWrapper.classList.remove('vh-70');
-      mainWrapper.classList.add('vh-100');
-    } else {
-      mainWrapper.classList.remove('vh-100');
-      mainWrapper.classList.add('vh-70');
-    }
+    mainWrapper.classList.remove('vh-70');
+    mainWrapper.classList.add('vh-100');
+  } else {
+    mainWrapper.classList.remove('vh-100');
+    mainWrapper.classList.add('vh-70');
   }
-
-  adjustWrapperSize();
-  setLanguage();
+  })
 }
 
 // activate toast
@@ -61,6 +77,7 @@ function detectRoute() {
   return routes[window.location.pathname];
 }
 
+// set current language
 function setLanguage() {
   const defaultLanguage = 'en';
   const currentLanguge = sessionStorage.getItem('lang') || defaultLanguage;

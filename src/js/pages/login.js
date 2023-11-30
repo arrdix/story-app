@@ -1,4 +1,6 @@
+import Config from "../config/config";
 import Auth from "../network/auth";
+import TokenUtils from "../utils/tokenUtils";
 
 export function initLogin() {
   window.addEventListener('load', () => {
@@ -32,10 +34,13 @@ export function initLogin() {
       try {
         const loginSpinner = document.getElementById('login-spinner');
         loginSpinner.classList.remove('d-none');
+
         const response = await Auth.login({
           email: email,
           password: password
         })
+
+        TokenUtils.setUserToken(Config.USER_TOKEN_KEY, response.data.loginResult.token);
         window.location.href = '/';
       } catch (error) {
         window.alert(error);
