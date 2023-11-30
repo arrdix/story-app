@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@lit/localize": "^0.12.1",
+    "axios": "^1.6.2",
     "lit": "^3.1.0",
     "moment": "^2.29.4"
   }
