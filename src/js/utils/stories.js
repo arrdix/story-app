@@ -30,7 +30,7 @@ export async function renderStories() {
           <div class="card-img-overlay">
             <div class="card-title d-flex justify-content-between align-items-center ps-2 pt-2">
               <div class="d-flex flex-row gap-2">
-                <img src="${isOwner ? "/julia-garner.jpg" : story.photoUrl}" class="stories-dp rounded-circle border border-3 border-light" alt="">
+                <img src="${isOwner ? "/julia-garner.jpg" : story.photoUrl}" class="stories-dp object-fit-cover rounded-circle border border-3 border-light" alt="">
                 <div class="d-flex flex-column justify-content-center">
                   <p class="m-0">${story.name}</p>
                   <p class="fs-12 m-0">${formattedDateFromNow} | ${formattedDate}</p>

@@ -3,6 +3,14 @@ import { LitLightDom } from "./base/litLightDom";
 import { msg, updateWhenLocaleChanges } from "@lit/localize";
 
 export class StoryPreview extends LitLightDom {
+  static properties = {
+    name: { type: String, reflect: true },
+    createdAt: { type: String, reflect: true },
+    description: { type: String, reflect: true },
+    photoUrl: { type: String, reflect: true },
+    owner: { type: String, reflect: true },
+  }
+
   constructor() {
     super();
     updateWhenLocaleChanges(this);
@@ -11,18 +19,23 @@ export class StoryPreview extends LitLightDom {
   render() {
     return html`
       <div class="card h-100 text-light rounded-5">
-        <img src="https://placehold.co/1200x700/272727/fff?text=please+upload+your+story+image+from+public/img+directory" class="card-img object-fit-cover h-100 rounded-5 p-0" id="image-preview" alt="Story Image">
+        <img 
+          src="${this.owner
+          ? "https://placehold.co/1200x700/272727/fff?text=please+upload+your+story+image+from+public/img+directory"
+          : this.photoUrl}"
+          class="card-img object-fit-cover h-100 rounded-5 p-0" id="image-preview" alt="Story Image"
+        >
         <div class="card-backdrop position-absolute rounded-5"></div>
         <div class="card-img-overlay">
           <div class="card-title d-flex justify-content-start ps-2 pt-1 gap-2">
-            <img src="/julia-garner.jpg" class="rounded-pill border border-3 border-light w-5" alt="">
+            <img src="${this.owner ? "https://source.unsplash.com/1000x1000/?people" : this.photoUrl}" class="stories-dp object-fit-cover rounded-pill border border-3 border-light w-5" alt="">
             <div class="d-flex flex-column">
-              <p class="m-0">Julia Garner</p>
-              <p class="fs-12 m-0">${msg(`Story Preview`)}</p>
+              <p class="m-0">${this.name}</p>
+              <p class="fs-12 m-0">${this.owner ? msg(`Story Preview`) : this.createdAt}</p>
             </div>
           </div>
           <div class="card-body p-0 ps-2">
-            <p class="card-text fs-8" id="description-preview">${msg(`Please write your story description.`)}</p>
+            <p class="card-text fs-8" id="description-preview">${this.owner ? msg(`Please write your story description.`) : this.description}</p>
           </div>
         </div>
       </div>

@@ -22,6 +22,14 @@ const Stories = {
         'Authorization': `Bearer ${Auth.USER_TOKEN}`
       }
     })
+  },
+
+  async getStoriesById(id) {
+    return await axios.get(ApiEndpoint.DETAIL_STORY(id), {
+      headers: {
+        'Authorization': `Bearer ${Auth.USER_TOKEN}`
+      }
+    })
   }
 }
 
