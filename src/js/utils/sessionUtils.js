@@ -1,15 +1,15 @@
-const TokenUtils = {
-  setUserToken(key, value) {
+const SessionUtils = {
+  setSession(key, value) {
     return sessionStorage.setItem(key, value)
   },
 
-  getUserToken(key) {
+  getSession(key) {
     return sessionStorage.getItem(key)
   },
 
-  destroyUserToken(key) {
+  destroySession(key) {
     return sessionStorage.removeItem(key)
   },
 }
 
-export default TokenUtils;
+export default SessionUtils;

@@ -1,6 +1,6 @@
 import Config from "../config/config";
 import Auth from "../network/auth";
-import TokenUtils from "../utils/tokenUtils";
+import SessionUtils from "../utils/sessionUtils";
 
 export function initLogin() {
   window.addEventListener('load', () => {
@@ -40,7 +40,8 @@ export function initLogin() {
           password: password
         })
 
-        TokenUtils.setUserToken(Config.USER_TOKEN_KEY, response.data.loginResult.token);
+        SessionUtils.setSession(Config.USER_TOKEN_KEY, response.data.loginResult.token);
+        SessionUtils.setSession(Config.USER_NAME_KEY, response.data.loginResult.name);
         window.location.href = '/';
       } catch (error) {
         window.alert(error);

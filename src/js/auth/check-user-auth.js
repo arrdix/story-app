@@ -1,11 +1,11 @@
 import Config from "../config/config"
-import TokenUtils from "../utils/tokenUtils"
+import SessionUtils from "../utils/sessionUtils";
 
 export const checkUserAuth = {
   authPage: ['login.html', 'register.html'],
 
   checkLoginState() {
-    const userToken = TokenUtils.getUserToken(Config.USER_TOKEN_KEY);
+    const userToken = SessionUtils.getSession(Config.USER_TOKEN_KEY);
     const isUserSignIn = Boolean(userToken);
     const isUserOnAuthPage = this._isUserOnAuthPage(this.authPage);
 

@@ -1,7 +1,7 @@
 import axios from "axios"
 import ApiEndpoint from "../config/api-endpoint"
-import TokenUtils from "../utils/tokenUtils"
 import Config from "../config/config"
+import SessionUtils from "../utils/sessionUtils"
 
 const Auth = {
   async register({name, email, password}) {
@@ -12,7 +12,8 @@ const Auth = {
     return await axios.post(ApiEndpoint.LOGIN, { email, password })
   },
 
-  USER_TOKEN: TokenUtils.getUserToken(Config.USER_TOKEN_KEY),
+  USER_TOKEN: SessionUtils.getSession(Config.USER_TOKEN_KEY),
+  USER_NAME: SessionUtils.getSession(Config.USER_NAME_KEY),
 }
 
 export default Auth;
