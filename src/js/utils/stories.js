@@ -13,7 +13,6 @@ export function renderStories() {
 
   function renderCard(stories) {
     stories.forEach((story, index) => {
-      console.log(story, index);
       const isFirstIndex = index == 0;
       const isOwner = story.name === 'Julia Garner';
       const rawDate = story.createdAt;

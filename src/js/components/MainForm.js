@@ -73,9 +73,13 @@ export class MainForm extends LitLightDom {
               <input class="form-control form-control-sm fs-10" id="image" type="file" accept="image/*" required>
               <div class="invalid-feedback fs-10">${msg(`Please upload your story photo.`)}</div>
             </div>
-            <div class="mx-4 mb-4">
+            <div class="mx-4 mb-2">
               <textarea class="form-control form-control form-control-sm fs-10" id="description" rows="3" placeholder="Story description" required></textarea>
               <div class="invalid-feedback fs-10">${msg(`Please write your story description.`)}</div>
+            </div>
+            <div class="mx-4 mb-4 d-flex align-items-center">
+              <input class="form-check-input bg-dark m-0 me-1" id="anonymous-check" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label fs-10" for="flexCheckDefault">${msg(`Post as anonymous`)}</label>
             </div>
             <div class="d-grid mx-4 mb-2">
               <button class="btn btn-dark fs-8 fw-1" type="submit">

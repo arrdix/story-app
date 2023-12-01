@@ -1,6 +1,5 @@
 import axios from "axios";
 import ApiEndpoint from "../config/api-endpoint"
-import Config from "../config/config"
 import Auth from "./auth";
 
 const Stories = {
@@ -13,9 +12,7 @@ const Stories = {
     })
   },
 
-  async addStoryGuest({description, photo, lon, lat}) {
-    const data = {description, photo, lon, lat};
-
+  async addStoryGuest(data) {
     return await axios.post(ApiEndpoint.GUEST_ADD_NEW, data);
   },
 

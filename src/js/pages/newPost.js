@@ -50,36 +50,71 @@ export function initNewPost() {
       form.classList.add('was-validated');
 
       if (image.files[0]) {
-        generateNewStory(
-          description.value,
-          image.files[0],
-          generateRandomLat(), 
-          generateRandomLon(),
-        );
+        const anonymousCheck = document.getElementById('anonymous-check').checked;
+        if (anonymousCheck) {
+          genereateAnonymousNewStory(
+            description.value,
+            image.files[0],
+            generateRandomLat(), 
+            generateRandomLon(),
+          )
+        } else {
+            generateNewStory(
+            description.value,
+            image.files[0],
+            generateRandomLat(), 
+            generateRandomLon(),
+          );
+        }
       }
     })
 
-    async function generateNewStory(description, photo, lat, lon) {
-      if (!photo.type.startsWith('image/')) {
-        return window.alert('The story photo must be a valid image');
-      }
+    async function genereateAnonymousNewStory(description, photo, lat, lon) {
+      imageValidation(photo);
 
-      const newStory = new FormData();
-      newStory.append('description', description);
-      newStory.append('photo', photo);
-      newStory.append('lat', lat);
-      newStory.append('lon', lon);
+      try {
+        const postSpinner = document.getElementById('post-spinner');
+        postSpinner.classList.remove('d-none');
+        
+        const newStory = createFormData(description, photo, lat, lon);
+        const response = await Stories.addStoryGuest(newStory);
+        window.alert(response.data.message);
+        window.location.href = '/';
+      } catch (error) {
+        window.alert(error);
+      }
+    }
+
+    async function generateNewStory(description, photo, lat, lon) {
+      imageValidation(photo);
 
       try {
         const postSpinner = document.getElementById('post-spinner');
         postSpinner.classList.remove('d-none');
 
+        const newStory = createFormData(description, photo, lat, lon);
         const response = await Stories.addStory(newStory);
         window.alert(response.data.message);
         window.location.href = '/';
       } catch (error) {
         window.alert(error);
       }
+    }
+
+    function imageValidation(photo) {
+      if (!photo.type.startsWith('image/')) {
+        return window.alert('The story photo must be a valid image');
+      }
+    }
+
+    function createFormData(description, photo, lat, lon) {
+      const newStory = new FormData();
+      newStory.append('description', description);
+      newStory.append('photo', photo);
+      newStory.append('lat', lat);
+      newStory.append('lon', lon);
+
+      return newStory;
     }
 
     function generateRandomLat() {
