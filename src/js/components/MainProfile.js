@@ -1,6 +1,7 @@
 import { css, html } from "lit";
 import { LitLightDom } from "./base/litLightDom";
 import { updateWhenLocaleChanges } from "@lit/localize";
+import Auth from "../network/auth";
 
 export class MainProfile extends LitLightDom {
   static properties = {
@@ -14,13 +15,14 @@ export class MainProfile extends LitLightDom {
 
   constructor() {
     super();
+    this.name = Auth.USER_NAME;
     updateWhenLocaleChanges(this);
   }
 
   render() {    
     return html`
       <div class="row justify-content-center align-items-end mb-2">
-        <img src="${this.owner ? "https://source.unsplash.com/1000x1000/?people" : this.photoUrl}" class="detail-dp object-fit-cover rounded-pill border border-3 border-light p-0 d-none d-md-block" id="detail-dp" alt="Profile Picture">
+        <img src="${this.owner ? "https://source.unsplash.com/1000x1000/?face" : this.photoUrl}" class="detail-dp object-fit-cover rounded-pill border border-3 border-light p-0 d-none d-md-block" id="detail-dp" alt="Profile Picture">
       </div>
       <div class="row">
         <div class="col-12 d-flex justify-content-center align-items-center gap-1">

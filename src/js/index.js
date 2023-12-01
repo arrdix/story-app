@@ -10,8 +10,8 @@ import { initAbout } from './pages/about';
 import { setLocale } from './localization';
 import { initRegister } from './pages/register';
 import { checkUserAuth } from './auth/check-user-auth';
-import TokenUtils from './utils/tokenUtils';
 import Config from './config/config';
+import SessionUtils from './utils/sessionUtils';
 
 window.addEventListener('DOMContentLoaded', initPages);
 
@@ -39,7 +39,7 @@ function fetchStoriesData() {
 function logOutHandler() {
   const logOutBtn = document.getElementById('btn-logout');
   logOutBtn?.addEventListener('click', () => {
-    TokenUtils.destroyUserToken(Config.USER_TOKEN_KEY);
+    SessionUtils.destroySession(Config.USER_TOKEN_KEY);
   })
 }
 
