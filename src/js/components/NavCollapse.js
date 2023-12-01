@@ -24,9 +24,9 @@ export class NavCollapse extends LitLightDom {
       </div>
       <div class="col-9 text-dark d-flex flex-row justify-content-between mb-2 pb-2 px-5">
         <div class="d-flex justify-content-around align-items-center gap-5">
-          <a class="link-dark link-underline link-underline-opacity-0 link-opacity-75-hover fs-8 pop-button" href="home.html" type="button">${msg(`Home`)}</a>
-          <a class="link-dark link-underline link-underline-opacity-0 link-opacity-75-hover fs-8 pop-button" href="new-post.html" type="button">${msg(`New Post`)}</a>
-          <a class="link-dark link-underline link-underline-opacity-0 link-opacity-75-hover fs-8 pop-button" href="about.html" type="button">${msg(`About`)}</a>
+          <a class="link-dark link-underline link-underline-opacity-0 link-opacity-75-hover fs-8 pop-button" href="/" type="button">${msg(`Home`)}</a>
+          <a class="link-dark link-underline link-underline-opacity-0 link-opacity-75-hover fs-8 pop-button" href="/new-post.html" type="button">${msg(`New Post`)}</a>
+          <a class="link-dark link-underline link-underline-opacity-0 link-opacity-75-hover fs-8 pop-button" href="/about.html" type="button">${msg(`About`)}</a>
         </div>
         <div class="btn-group dropup">
           <button type="button" class="btn dropdown-toggle fs-10 p-0" data-bs-toggle="dropdown" aria-expanded="false">

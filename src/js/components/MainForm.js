@@ -78,7 +78,10 @@ export class MainForm extends LitLightDom {
               <div class="invalid-feedback fs-10">${msg(`Please write your story description.`)}</div>
             </div>
             <div class="d-grid mx-4 mb-2">
-              <button class="btn btn-dark fs-8 fw-1" type="submit">${msg(`Post`)}</button>
+              <button class="btn btn-dark fs-8 fw-1" type="submit">
+                <span class="spinner-border spinner-border-sm d-none" id="post-spinner" aria-hidden="true"></span>
+                <span role="status">${msg(`Post`)}</span>
+              </button>
             </div>
           </form>
         `;

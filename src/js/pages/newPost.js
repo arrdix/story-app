@@ -1,5 +1,6 @@
 import { initNavbar } from "../utils/navbar";
 import { LocalStorage } from "../utils/localStorage";
+import Stories from "../network/stories";
 
 export function initNewPost() {
   window.addEventListener('load', () => {
@@ -40,6 +41,9 @@ export function initNewPost() {
     form.addEventListener('submit', event => {
       event.preventDefault();
       if (!form.checkValidity()) {
+        const postSpinner = document.getElementById('post-spinner');
+        postSpinner.classList.add('d-none');
+        
         event.preventDefault();
         event.stopPropagation();
       }
@@ -47,42 +51,35 @@ export function initNewPost() {
 
       if (image.files[0]) {
         generateNewStory(
-          image.files[0].name,
           description.value,
+          image.files[0],
           generateRandomLat(), 
           generateRandomLon(),
         );
       }
     })
 
-    function generateNewStory(photoUrl, description, lat, lon) {
-      const currentDate = new Date();
-      const iso8601Format = currentDate.toISOString();
-
-      const newStory = {
-        // id: generateRandomID(16),
-        // createdAt: iso8601Format,
-        description: description,
-        photoUrl: `/${photoUrl}`,
-        lat: lat,
-        lon: lon,
+    async function generateNewStory(description, photo, lat, lon) {
+      if (!photo.type.startsWith('image/')) {
+        return window.alert('The story photo must be a valid image');
       }
 
-      console.log(newStory);
-      // LocalStorage.storeData(newStory);
-      // window.location.href = '/';
-    }
+      const newStory = new FormData();
+      newStory.append('description', description);
+      newStory.append('photo', photo);
+      newStory.append('lat', lat);
+      newStory.append('lon', lon);
 
-    function generateRandomID(length) {
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      let result = '';
+      try {
+        const postSpinner = document.getElementById('post-spinner');
+        postSpinner.classList.remove('d-none');
 
-      for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * chars.length);
-        result += chars[randomIndex];
+        const response = await Stories.addStory(newStory);
+        window.alert(response.data.message);
+        window.location.href = '/';
+      } catch (error) {
+        window.alert(error);
       }
-
-      return `story-${result}`;
     }
 
     function generateRandomLat() {
