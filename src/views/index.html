@@ -9,12 +9,12 @@
   <div class="container-sm position-absolute top-50 start-50 translate-middle bg-primary rounded-5 shadow-1">
     <div class="main-wrapper row vh-70 overflow-hidden">
       <floating-navbar></floating-navbar>
-      <div class="col-12 col-md-4 col-xl-3 h-100 d-none overflow-auto d-md-flex flex-column justify-content-between align-items-center py-5 pop-element" id="left-col">
+      <div class="col-12 col-md-4 col-xl-3 h-100 d-none d-md-flex overflow-auto flex-column justify-content-between align-items-center py-5 pop-element" id="left-col">
         <app-logo></app-logo>
         <main-profile
           name="Julia Garner"
           username="juliagarner"
-          image="julia-garner.jpg"
+          owner="true"
         >
         </main-profile>
         <nav-buttons
@@ -29,7 +29,7 @@
           data-bs-ride="false"
         >
           <a href="/new-post.html" class="btn-secondary position-absolute d-none d-md-block rounded-circle bottom-0 end-0 p-0 me-5 mb-5 z-1 bouncing-element">
-            <i class="bi bi-plus-circle-fill text-light fs-xxl shadow-1"></i>
+            <i class="bi bi-plus-circle-fill text-light fs-xxl"></i>
           </a>
           <div class="carousel-indicators me-4"></div>
           <div class="carousel-inner h-100 carousel-border adaptive-rounded-5">
@@ -39,6 +39,21 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-12 col-md-4 col-xl-3 h-100 d-none overflow-auto flex-column justify-content-start align-items-center py-5 ps-0 gap-4 pop-element" id="detail-col">
+        <div class="row d-flex justify-content-start align-items-between w-100">
+          <div class="col-3 d-flex flex-row justify-content-start align-items-center">
+            <button class="btn d-flex flex-row" id="btn-back">
+              <span><i class="bi bi-chevron-left"></i></span>
+              <span><p class="fs-6 m-0 ms-1 ">Back</p></span>
+            </button>
+          </div>
+        </div>
+        <main-profile
+          name="Some Name"
+          username="someusername"
+        >
+        </main-profile>
       </div>
     </div>
     <nav-collapse

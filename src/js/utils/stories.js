@@ -1,7 +1,8 @@
+import * as bootstrap from 'bootstrap';
 import Stories from "../network/stories";
 const moment = require('moment');
 
-export function renderStories() {
+export async function renderStories() {
   async function getStories() {
     try {
       const response = await Stories.getAllStories();
@@ -27,11 +28,18 @@ export function renderStories() {
           <img src="${story.photoUrl}" class="card-img h-100 object-fit-cover p-0" alt="Story Image">
           <div class="card-backdrop position-absolute top-50 start-50 translate-middle"></div>
           <div class="card-img-overlay">
-            <div class="card-title d-flex justify-content-start ps-2 pt-2 gap-2">
-              <img src="${isOwner ? "/julia-garner.jpg" : story.photoUrl}" class="stories-dp rounded-circle border border-3 border-light" alt="">
-              <div class="d-flex flex-column justify-content-center">
-                <p class="m-0">${story.name}</p>
-                <p class="fs-12 m-0">${formattedDateFromNow} | ${formattedDate}</p>
+            <div class="card-title d-flex justify-content-between align-items-center ps-2 pt-2">
+              <div class="d-flex flex-row gap-2">
+                <img src="${isOwner ? "/julia-garner.jpg" : story.photoUrl}" class="stories-dp rounded-circle border border-3 border-light" alt="">
+                <div class="d-flex flex-column justify-content-center">
+                  <p class="m-0">${story.name}</p>
+                  <p class="fs-12 m-0">${formattedDateFromNow} | ${formattedDate}</p>
+                </div>
+              </div>
+              <div class="fs-6 px-3">
+                <button class="btn btn-detail text-light p-0 z-3" id="${story.id}" type="button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Show detail">
+                  <i class="bi bi-box-arrow-up-right"></i>
+                </button>
               </div>
             </div>
             <div class="card-body p-0 ps-2">
@@ -58,5 +66,5 @@ export function renderStories() {
     carouselIndicators.append(btnIndicator);
   }
 
-  getStories();
+  await getStories();
 }

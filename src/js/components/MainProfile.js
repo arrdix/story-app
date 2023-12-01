@@ -6,7 +6,7 @@ export class MainProfile extends LitLightDom {
   static properties = {
     name: { type: String, reflect: true },
     username: { type: String, reflect: true },
-    image: { type: String, reflect: true },
+    owner: { type: String, reflect: true },
   }
 
   constructor() {
@@ -17,18 +17,28 @@ export class MainProfile extends LitLightDom {
   render() {    
     return html`
       <div class="row justify-content-center align-items-end mb-2">
-        <img src="/${this.image}" class="w-50 rounded-pill border border-3 border-light p-0 d-none d-md-block" alt="Profile Picture">
+        <img src="https://source.unsplash.com/1000x1000/?people" class="w-50 rounded-pill border border-3 border-light p-0 d-none d-md-block" alt="Profile Picture">
       </div>
       <div class="row">
         <div class="col-12 d-flex justify-content-center align-items-center gap-1">
           <p class="m-0 text-dark fs-8 fw-light">@${this.username}</p>
-          <a href="/login.html" class="btn btn-logout p-0" id="btn-logout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Log out">
-            <i class="bi bi-gear-fill fs-8"></i>
-          </a>
+          ${this.owner
+          ? html`
+            <a href="/login.html" class="btn btn-logout p-0" id="btn-logout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Log out">
+              <i class="bi bi-gear-fill fs-8"></i>
+            </a>
+            `
+          : ""}
         </div>
       </div>
       <div class="row text-center">
-        <h5 class="m-0 text-dark fw-normal fw-bold">${this.name}</h5>
+        <h5 class="m-0 mb-2 text-dark fw-normal fw-bold">${this.name}</h5>
+        ${this.owner
+          ? ""
+          : html`
+            <p class="fs-10"> here goes the description </p>
+          `
+        }
       </div>
     `;
   }
