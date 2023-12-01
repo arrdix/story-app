@@ -1,10 +1,19 @@
-import { LocalStorage } from "./localStorage";
+import Stories from "../network/stories";
 const moment = require('moment');
 
 export function renderStories() {
-  function renderCard() {
-    const stories = LocalStorage.stories;
+  async function getStories() {
+    try {
+      const response = await Stories.getAllStories();
+      renderCard(response.data.listStory);
+    } catch (error) {
+      window.alert(error)
+    }
+  }
+
+  function renderCard(stories) {
     stories.forEach((story, index) => {
+      console.log(story, index);
       const isFirstIndex = index == 0;
       const isOwner = story.name === 'Julia Garner';
       const rawDate = story.createdAt;
@@ -50,5 +59,5 @@ export function renderStories() {
     carouselIndicators.append(btnIndicator);
   }
 
-  renderCard();
+  getStories();
 }
