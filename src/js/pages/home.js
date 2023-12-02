@@ -5,6 +5,9 @@ import { renderStoryDetail } from '../utils/storyDetail';
 
 export async function initHome() {
   window.addEventListener('load', () => {
+    const loadingElement = document.querySelector('.loading-element');
+    loadingElement.classList.add('d-none');
+
     const mainCarouselElement = document.getElementById('mainCarousel');
     mainCarouselElement.addEventListener('wheel', (event) => {
       const mainCarousel = new bootstrap.Carousel(document.getElementById('mainCarousel'));

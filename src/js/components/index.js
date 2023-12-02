@@ -11,3 +11,4 @@ import './NewPostProfile';
 import './MainForm';
 import './MainProfile';
 import './AboutProfile';
+import './loadingAnimation';

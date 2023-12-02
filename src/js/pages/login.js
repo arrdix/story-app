@@ -4,6 +4,9 @@ import SessionUtils from '../utils/sessionUtils';
 
 export function initLogin() {
   window.addEventListener('load', () => {
+    const loadingElement = document.querySelector('.loading-element');
+    loadingElement.classList.add('d-none');
+
     const leftCol = document.querySelector('#left-col');
     setTimeout(() => {
       leftCol.classList.add('show');
