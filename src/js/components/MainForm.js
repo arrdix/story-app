@@ -21,12 +21,12 @@ export class MainForm extends LitLightDom {
         return html`
           <form class="needs-validation" id="${this.idName}" novalidate>
             <div class="mx-4 mb-2 mt-5">
-              <input type="text" class="form-control form-control-sm fs-10" id="email" minlength="5" placeholder="Email" required>
+              <input type="text" class="form-control form-control-sm fs-10" id="email" minlength="8" placeholder="Email" required>
               <div class="invalid-feedback">${msg('Please enter a valid username.')}</div>
             </div>
             <div class="mx-4 mb-2">
               <div class="input-group input-group-sm">
-                <input type="password" class="form-control form-control-sm fs-10" id="password" minlength="5" placeholder="Password" required>
+                <input type="password" class="form-control form-control-sm fs-10" id="password" minlength="8" placeholder="Password" required>
                 <button class="input-group-text" type="button" id="login-btn-show-password">
                   <i class="bi bi-eye" id="login-eye-icon"></i>
                 </button>
@@ -65,7 +65,7 @@ export class MainForm extends LitLightDom {
                 type="text"
                 class="form-control form-control-sm fs-10"
                 id="name"
-                minlength="5"
+                minlength="8"
                 placeholder="Name"
                 required
               />
@@ -76,7 +76,7 @@ export class MainForm extends LitLightDom {
                 type="text"
                 class="form-control form-control-sm fs-10"
                 id="email"
-                minlength="5"
+                minlength="8"
                 placeholder="Email"
                 required
               />
