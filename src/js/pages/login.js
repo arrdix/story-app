@@ -1,6 +1,6 @@
-import Config from "../config/config";
-import Auth from "../network/auth";
-import SessionUtils from "../utils/sessionUtils";
+import Config from '../config/config';
+import Auth from '../network/auth';
+import SessionUtils from '../utils/sessionUtils';
 
 export function initLogin() {
   window.addEventListener('load', () => {
@@ -38,8 +38,8 @@ export function initLogin() {
         event.preventDefault();
         event.stopPropagation();
       }
-      form.classList.add('was-validated')
-      getLogged(email, password)
+      form.classList.add('was-validated');
+      getLogged(email, password);
     }
 
     async function getLogged(email, password) {
@@ -48,9 +48,9 @@ export function initLogin() {
         loginSpinner.classList.remove('d-none');
 
         const response = await Auth.login({
-          email: email,
-          password: password
-        })
+          email,
+          password,
+        });
 
         SessionUtils.setSession(Config.USER_TOKEN_KEY, response.data.loginResult.token);
         SessionUtils.setSession(Config.USER_NAME_KEY, response.data.loginResult.name);
@@ -64,5 +64,5 @@ export function initLogin() {
         authStatus.textContent = `Sorry, ${responseMessage.toLowerCase()}.`;
       }
     }
-  })
+  });
 }

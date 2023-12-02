@@ -1,15 +1,15 @@
 const SessionUtils = {
   setSession(key, value) {
-    return sessionStorage.setItem(key, value)
+    return sessionStorage.setItem(key, value);
   },
 
   getSession(key) {
-    return sessionStorage.getItem(key)
+    return sessionStorage.getItem(key);
   },
 
   destroySession(key) {
-    return sessionStorage.removeItem(key)
+    return sessionStorage.removeItem(key);
   },
-}
+};
 
 export default SessionUtils;

@@ -1,6 +1,7 @@
 import '../scss/styles.scss';
+import './components';
+
 import * as bootstrap from 'bootstrap';
-import { components } from './components';
 
 import { initLogin } from './pages/login';
 import { initHome } from './pages/home';
@@ -19,8 +20,8 @@ function initPages() {
   const route = detectRoute();
   route();
 
-  fetchStoriesData()
-  logOutHandler()
+  fetchStoriesData();
+  logOutHandler();
   adjustWrapperSize();
   setLanguage();
 
@@ -40,7 +41,7 @@ function logOutHandler() {
   const logOutBtn = document.getElementById('btn-logout');
   logOutBtn?.addEventListener('click', () => {
     SessionUtils.destroySession(Config.USER_TOKEN_KEY);
-  })
+  });
 }
 
 // adjust wrapper height on small screen
@@ -48,20 +49,20 @@ function adjustWrapperSize() {
   const mainWrapper = document.querySelector('.main-wrapper');
   window.addEventListener('resize', () => {
     if (window.innerWidth < 768) {
-    mainWrapper.classList.remove('vh-70');
-    mainWrapper.classList.add('vh-100');
-  } else {
-    mainWrapper.classList.remove('vh-100');
-    mainWrapper.classList.add('vh-70');
-  }
-  })
+      mainWrapper.classList.remove('vh-70');
+      mainWrapper.classList.add('vh-100');
+    } else {
+      mainWrapper.classList.remove('vh-100');
+      mainWrapper.classList.add('vh-70');
+    }
+  });
 }
 
 // activate toast
-const toastLiveExample = document.getElementById('mainToast')
-const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+const toastLiveExample = document.getElementById('mainToast');
+const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
 setTimeout(() => {
-  toastBootstrap.show()
+  toastBootstrap.show();
 }, 1000);
 
 // routing
@@ -71,7 +72,7 @@ const routes = {
   '/about.html': initAbout,
   '/login.html': initLogin,
   '/register.html': initRegister,
-}
+};
 
 function detectRoute() {
   return routes[window.location.pathname];

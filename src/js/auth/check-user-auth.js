@@ -1,5 +1,5 @@
-import Config from "../config/config"
-import SessionUtils from "../utils/sessionUtils";
+import Config from '../config/config';
+import SessionUtils from '../utils/sessionUtils';
 
 export const checkUserAuth = {
   authPage: ['login.html', 'register.html'],
@@ -14,6 +14,7 @@ export const checkUserAuth = {
         window.location.href = '/';
       }
     } else {
+      // eslint-disable-next-line no-lonely-if
       if (!isUserOnAuthPage) {
         window.location.href = 'login.html';
       }
@@ -21,7 +22,7 @@ export const checkUserAuth = {
   },
 
   _isUserOnAuthPage(pages) {
-    const filteredPage = pages.filter(page => window.location.pathname.endsWith(page));
+    const filteredPage = pages.filter((page) => window.location.pathname.endsWith(page));
     return Boolean(filteredPage.length);
-  }
-}
+  },
+};

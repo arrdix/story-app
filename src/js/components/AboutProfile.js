@@ -1,11 +1,12 @@
-import { msg,updateWhenLocaleChanges } from "@lit/localize";
-import { LitElement, html, css } from "lit";
+/* eslint-disable indent */
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
+import { LitElement, html, css } from 'lit';
 
 export class AboutProfile extends LitElement {
   static properties = {
     image: { type: String, reflect: true },
     name: { type: String, reflect: true },
-  }
+  };
 
   static styles = [
     css`
@@ -36,14 +37,14 @@ export class AboutProfile extends LitElement {
       }
       .desc-wrapper {
         text-align: center;
-        
+
         .about-desc {
           font-size: 0.8rem;
           margin: 0;
         }
       }
-    `
-  ]
+    `,
+  ];
 
   constructor() {
     super();
@@ -53,14 +54,17 @@ export class AboutProfile extends LitElement {
   render() {
     return html`
       <div class="image-wrapper">
-        <img src="/${this.image}" class="about-image" alt="Profile Picture">
+        <img src="/${this.image}" class="about-image" alt="Profile Picture" />
       </div>
       <div class="name-wrapper">
         <h5 class="about-name">${this.name}</h5>
       </div>
       <div class="desc-wrapper">
         <p class="about-desc">
-          ${msg(`I'm a passionate front-end developer who loves to connecting the dots between design and functionality.`)}
+          ${msg(
+            // eslint-disable-next-line quotes
+            `I'm a passionate front-end developer who loves to connecting the dots between design and functionality.`,
+          )}
         </p>
       </div>
     `;

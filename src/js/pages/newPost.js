@@ -1,6 +1,5 @@
-import { initNavbar } from "../utils/navbar";
-import { LocalStorage } from "../utils/localStorage";
-import Stories from "../network/stories";
+import { initNavbar } from '../utils/navbar';
+import Stories from '../network/stories';
 
 export function initNewPost() {
   window.addEventListener('load', () => {
@@ -18,32 +17,32 @@ export function initNewPost() {
     const image = document.getElementById('image');
     const description = document.getElementById('description');
 
-    image.addEventListener('change', event => {
+    image.addEventListener('change', (event) => {
       const file = event.target.files[0];
       if (file) {
         const reader = new FileReader();
 
-        reader.onload = function(e) {
+        reader.onload = function (e) {
           const preview = document.getElementById('image-preview');
           preview.src = e.target.result;
-        }
+        };
 
         reader.readAsDataURL(file);
       }
-    })
+    });
 
-    description.addEventListener('input', event => {
+    description.addEventListener('input', (event) => {
       const inputValue = event.target.value;
       const descriptionPreview = document.getElementById('description-preview');
       descriptionPreview.textContent = inputValue;
-    })
+    });
 
-    form.addEventListener('submit', event => {
+    form.addEventListener('submit', (event) => {
       event.preventDefault();
       if (!form.checkValidity()) {
         const postSpinner = document.getElementById('post-spinner');
         postSpinner.classList.add('d-none');
-        
+
         event.preventDefault();
         event.stopPropagation();
       }
@@ -55,28 +54,28 @@ export function initNewPost() {
           genereateAnonymousNewStory(
             description.value,
             image.files[0],
-            generateRandomLat(), 
+            generateRandomLat(),
             generateRandomLon(),
-          )
+          );
         } else {
-            generateNewStory(
+          generateNewStory(
             description.value,
             image.files[0],
-            generateRandomLat(), 
+            generateRandomLat(),
             generateRandomLon(),
           );
         }
       }
-    })
+    });
 
-    async function genereateAnonymousNewStory(description, photo, lat, lon) {
-      imageValidation(photo);
+    async function genereateAnonymousNewStory(descriptionStory, photoStory, latStory, lonStory) {
+      imageValidation(photoStory);
 
       try {
         const postSpinner = document.getElementById('post-spinner');
         postSpinner.classList.remove('d-none');
-        
-        const newStory = createFormData(description, photo, lat, lon);
+
+        const newStory = createFormData(descriptionStory, photoStory, latStory, lonStory);
         const response = await Stories.addStoryGuest(newStory);
         window.alert(response.data.message);
         window.location.href = '/';
@@ -85,14 +84,14 @@ export function initNewPost() {
       }
     }
 
-    async function generateNewStory(description, photo, lat, lon) {
-      imageValidation(photo);
+    async function generateNewStory(descriptionStory, photoStory, latStory, lonStory) {
+      imageValidation(photoStory);
 
       try {
         const postSpinner = document.getElementById('post-spinner');
         postSpinner.classList.remove('d-none');
 
-        const newStory = createFormData(description, photo, lat, lon);
+        const newStory = createFormData(descriptionStory, photoStory, latStory, lonStory);
         const response = await Stories.addStory(newStory);
         window.alert(response.data.message);
         window.location.href = '/';
@@ -101,18 +100,18 @@ export function initNewPost() {
       }
     }
 
-    function imageValidation(photo) {
-      if (!photo.type.startsWith('image/')) {
-        return window.alert('The story photo must be a valid image');
+    function imageValidation(photoStory) {
+      if (!photoStory.type.startsWith('image/')) {
+        window.alert('The story photo must be a valid image');
       }
     }
 
-    function createFormData(description, photo, lat, lon) {
+    function createFormData(descriptionStory, photo, latStory, lonStory) {
       const newStory = new FormData();
-      newStory.append('description', description);
+      newStory.append('description', descriptionStory);
       newStory.append('photo', photo);
-      newStory.append('lat', lat);
-      newStory.append('lon', lon);
+      newStory.append('lat', latStory);
+      newStory.append('lon', lonStory);
 
       return newStory;
     }
@@ -136,5 +135,5 @@ export function initNewPost() {
     }
 
     initNavbar();
-  })
+  });
 }

@@ -3,7 +3,6 @@ export class LocalStorage {
 
   static storeData(story) {
     LocalStorage.stories.unshift(story);
-    console.log(LocalStorage.stories);
     this.saveData('STORIES', LocalStorage.stories);
   }
 

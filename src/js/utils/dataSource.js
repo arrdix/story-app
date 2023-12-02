@@ -1,23 +1,20 @@
-import { LocalStorage } from "./localStorage";
+import { LocalStorage } from './localStorage';
 
 export function fetchDataFromAPI() {
   return fetch('https://raw.githubusercontent.com/dicodingacademy/a565-webtools-labs/099-shared-files/proyek-awal/DATA.json')
-    .then(response => {
-      return response.json();
-    })
-    .then(responseJson => {
+    .then((response) => response.json())
+    .then((responseJson) => {
       if (!responseJson.error) {
-        let stories = [];
-        responseJson.listStory.forEach(story => {
+        const stories = [];
+        responseJson.listStory.forEach((story) => {
           stories.push(story);
-        })
+        });
         LocalStorage.saveData('STORIES', stories);
-        return Promise.resolve(responseJson.message)
-      } else {
-        return Promise.reject(new Error('Error: API response has an error!'))
+        return Promise.resolve(responseJson.message);
       }
+      return Promise.reject(new Error('Error: API response has an error!'));
     })
-    .catch(error => {
+    .catch((error) => {
       errorHandle('Error: failed to get data from API!');
       return Promise.reject(error);
     });

@@ -1,4 +1,4 @@
-import Auth from "../network/auth";
+import Auth from '../network/auth';
 
 export function initRegister() {
   const leftCol = document.querySelector('#left-col');
@@ -33,11 +33,11 @@ export function initRegister() {
       const registerSpinner = document.getElementById('register-spinner');
       registerSpinner.classList.remove('d-none');
 
-      const response = await Auth.register({
-        name: name,
-        email: email,
-        password: password,
-      })
+      await Auth.register({
+        name,
+        email,
+        password,
+      });
       window.location.href = '/login.html';
     } catch (error) {
       const registerSpinner = document.getElementById('register-spinner');

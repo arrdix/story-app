@@ -1,16 +1,7 @@
-import moment from "moment";
-import Stories from "../network/stories";
+import moment from 'moment';
+import Stories from '../network/stories';
 
-export function renderStoryDetail(id) {
-  async function getStoryById(id) {
-    try {
-      const response = await Stories.getStoriesById(id);
-      renderComponent(response.data.story);
-    } catch (error) {
-      window.alert(error);
-    }
-  }
-
+export function renderStoryDetail(storyId) {
   function renderComponent(story) {
     const formattedDateFromNow = moment(story.createdAt).fromNow();
 
@@ -29,5 +20,14 @@ export function renderStoryDetail(id) {
     mainStoryDetail.setAttribute('photoUrl', story.photoUrl);
   }
 
-  getStoryById(id);
+  async function getStoryById(id) {
+    try {
+      const response = await Stories.getStoriesById(id);
+      renderComponent(response.data.story);
+    } catch (error) {
+      window.alert(error);
+    }
+  }
+
+  getStoryById(storyId);
 }
