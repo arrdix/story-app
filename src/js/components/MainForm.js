@@ -22,8 +22,13 @@ export class MainForm extends LitLightDom {
               <div class="invalid-feedback">${msg(`Please enter a valid username.`)}</div>
             </div>
             <div class="mx-4 mb-2">
-              <input type="password" class="form-control form-control-sm fs-10" id="password" minlength="5" placeholder="Password" required>
-              <div class="invalid-feedback">${msg(`Please enter a valid password.`)}</div>
+              <div class="input-group input-group-sm">
+                <input type="password" class="form-control form-control-sm fs-10" id="password" minlength="5" placeholder="Password" required>
+                <button class="input-group-text" type="button" id="btn-show-password">
+                  <i class="bi bi-eye" id="eye-icon"></i>
+                </button>
+                <div class="invalid-feedback" id="">${msg(`Please enter a valid password.`)}</div>  
+              </div>
             </div>
             <div class="mx-4 mb-4 text-dark d-flex justify-content-end">
               <a href="" class="link-dark link-opacity-75-hover link-underline-opacity-0 fs-10">${msg(`Forgot password?`)}</a></p>
@@ -34,8 +39,11 @@ export class MainForm extends LitLightDom {
                 <span role="status">${msg(`Log in`)}</span>
               </button>
             </div>
-            <div class="mx-4 mb-2 text-dark d-flex justify-content-center">
+            <div class="mx-4 mb-3 text-dark d-flex justify-content-center">
               <p class="fs-10">${msg(`Don't have an account?`)} <a href="/register.html" class="link-dark link-opacity-75-hover link-offset-1">${msg(`Sign up`)}</a>.</p>
+            </div>
+            <div class="mx-4 mb-2 text-dark d-flex justify-content-center">
+              <p class="fs-10 text-danger" id="login-auth-status"></p>
             </div>
           </form>
         `;
@@ -62,6 +70,9 @@ export class MainForm extends LitLightDom {
             </div>
             <div class="mx-4 mb-2 text-dark d-flex justify-content-center">
               <p class="fs-10">${msg(`Already have an account?`)} <a href="/login.html" class="link-dark link-opacity-75-hover link-offset-1">${msg(`Log in`)}</a>.</p>
+            </div>
+            <div class="mx-4 mb-2 text-dark d-flex justify-content-center">
+              <p class="fs-10 text-danger" id="register-auth-status"></p>
             </div>
           </form>
         `;

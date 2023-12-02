@@ -24,7 +24,7 @@ export function initRegister() {
       event.preventDefault();
       event.stopPropagation();
     }
-    form.classList.add('was-validated')
+    form.classList.add('was-validated');
     getRegistered(name, email, password);
   }
 
@@ -32,6 +32,7 @@ export function initRegister() {
     try {
       const registerSpinner = document.getElementById('register-spinner');
       registerSpinner.classList.remove('d-none');
+
       const response = await Auth.register({
         name: name,
         email: email,
@@ -39,7 +40,12 @@ export function initRegister() {
       })
       window.location.href = '/login.html';
     } catch (error) {
-      window.alert(error);
+      const registerSpinner = document.getElementById('register-spinner');
+      registerSpinner.classList.add('d-none');
+
+      const authStatus = document.getElementById('register-auth-status');
+      const responseMessage = error.response.data.message;
+      authStatus.textContent = `Sorry, ${responseMessage.toLowerCase()}.`;
     }
   }
 }
