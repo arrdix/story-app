@@ -14,6 +14,21 @@ export function initRegister() {
   const form = document.getElementById('register-form');
   form.addEventListener('submit', handleSubmit);
 
+  const registerShowPassowordBtn = document.getElementById('register-btn-show-password');
+  registerShowPassowordBtn.addEventListener('click', showOrHidePassword);
+
+  function showOrHidePassword() {
+    const registerEyeIcon = document.getElementById('register-eye-icon');
+    const eyeIconAtt = registerEyeIcon.getAttribute('class');
+    const password = document.getElementById('password');
+    const passwordTypeAtt = password.getAttribute('type');
+    password.setAttribute('type', passwordTypeAtt === 'password' ? 'text' : 'password');
+    registerEyeIcon.setAttribute(
+      'class',
+      eyeIconAtt === 'bi bi-eye' ? 'bi bi-eye-slash' : 'bi bi-eye',
+    );
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     const name = document.getElementById('name').value;

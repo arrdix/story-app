@@ -17,16 +17,19 @@ export function initLogin() {
     const form = document.getElementById('login-form');
     form.addEventListener('submit', handleSubmit);
 
-    const showPassowordBtn = document.getElementById('btn-show-password');
-    showPassowordBtn.addEventListener('click', showOrHidePassword);
+    const loginShowPassowordBtn = document.getElementById('login-btn-show-password');
+    loginShowPassowordBtn.addEventListener('click', showOrHidePassword);
 
     function showOrHidePassword() {
-      const eyeIcon = document.getElementById('eye-icon');
-      const eyeIconAtt = eyeIcon.getAttribute('class');
+      const loginEyeIcon = document.getElementById('login-eye-icon');
+      const eyeIconAtt = loginEyeIcon.getAttribute('class');
       const password = document.getElementById('password');
       const passwordTypeAtt = password.getAttribute('type');
       password.setAttribute('type', passwordTypeAtt === 'password' ? 'text' : 'password');
-      eyeIcon.setAttribute('class', eyeIconAtt === 'bi bi-eye' ? 'bi bi-eye-slash' : 'bi bi-eye');
+      loginEyeIcon.setAttribute(
+        'class',
+        eyeIconAtt === 'bi bi-eye' ? 'bi bi-eye-slash' : 'bi bi-eye',
+      );
     }
 
     function handleSubmit(event) {

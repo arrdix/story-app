@@ -27,8 +27,8 @@ export class MainForm extends LitLightDom {
             <div class="mx-4 mb-2">
               <div class="input-group input-group-sm">
                 <input type="password" class="form-control form-control-sm fs-10" id="password" minlength="5" placeholder="Password" required>
-                <button class="input-group-text" type="button" id="btn-show-password">
-                  <i class="bi bi-eye" id="eye-icon"></i>
+                <button class="input-group-text" type="button" id="login-btn-show-password">
+                  <i class="bi bi-eye" id="login-eye-icon"></i>
                 </button>
                 <div class="invalid-feedback" id="">${msg('Please enter a valid password.')}</div>  
               </div>
@@ -83,15 +83,20 @@ export class MainForm extends LitLightDom {
               <div class="invalid-feedback">${msg('Please enter a valid password.')}</div>
             </div>
             <div class="mx-4 mb-4">
-              <input
-                type="password"
-                class="form-control form-control-sm fs-10"
-                id="password"
-                minlength="5"
-                placeholder="Password"
-                required
-              />
-              <div class="invalid-feedback">${msg('Please enter a valid password.')}</div>
+              <div class="input-group input-group-sm">
+                <input
+                  type="password"
+                  class="form-control form-control-sm fs-10"
+                  id="password"
+                  minlength="8"
+                  placeholder="Password"
+                  required
+                />
+                <button class="input-group-text" type="button" id="register-btn-show-password">
+                  <i class="bi bi-eye" id="register-eye-icon"></i>
+                </button>
+                <div class="invalid-feedback" id="">${msg('Please enter a valid password.')}</div>
+              </div>
             </div>
             <div class="d-grid mx-4 mb-2">
               <button class="btn btn-dark fs-8 fw-1" type="submit">
