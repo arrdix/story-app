@@ -7,9 +7,7 @@ export async function initHome() {
   window.addEventListener('load', () => {
     const mainCarouselElement = document.getElementById('mainCarousel');
     mainCarouselElement.addEventListener('wheel', (event) => {
-      const mainCarousel = new bootstrap.Carousel(
-        document.getElementById('mainCarousel'),
-      );
+      const mainCarousel = new bootstrap.Carousel(document.getElementById('mainCarousel'));
       if (event.deltaY > 0) mainCarousel.next();
       if (event.deltaY < 0) mainCarousel.prev();
 
@@ -42,15 +40,13 @@ export async function initHome() {
 
   // activate tooltips
   async function activateTooltips() {
-    const tooltipTriggerList = document.querySelectorAll(
-      '[data-bs-toggle="tooltip"]',
-    );
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(
       (tooltipTrigger) => new bootstrap.Tooltip(tooltipTrigger),
     );
   }
 
-  function displayDetailPage() {
+  function animateDetailPage() {
     const detailBtns = document.querySelectorAll('.btn-detail');
     detailBtns.forEach((btn) => {
       btn.addEventListener('click', (event) => {
@@ -62,8 +58,8 @@ export async function initHome() {
         const detailCol = document.getElementById('detail-col');
         const mainDetailCol = document.getElementById('main-detail-col');
 
-        leftCol.classList.remove('show');
-        mainCol.classList.remove('show');
+        leftCol.classList.add('pop-element-hide');
+        mainCol.classList.add('pop-element-reverse-hide');
 
         setTimeout(() => {
           mainCol.classList.remove('d-md-block');
@@ -76,12 +72,14 @@ export async function initHome() {
         setTimeout(() => {
           detailCol.classList.add('show');
           mainDetailCol.classList.add('show');
+          detailCol.classList.remove('pop-element-hide');
+          mainDetailCol.classList.remove('pop-element-reverse-hide');
         }, 750);
       });
     });
   }
 
-  function backToHome() {
+  function animateBackToHome() {
     const backBtn = document.getElementById('btn-back');
     backBtn.addEventListener('click', () => {
       const mainCol = document.getElementById('main-col');
@@ -89,8 +87,8 @@ export async function initHome() {
       const detailCol = document.getElementById('detail-col');
       const mainDetailCol = document.getElementById('main-detail-col');
 
-      mainDetailCol.classList.remove('show');
-      detailCol.classList.remove('show');
+      mainDetailCol.classList.add('pop-element-reverse-hide');
+      detailCol.classList.add('pop-element-hide');
 
       setTimeout(() => {
         detailCol.classList.remove('d-md-flex');
@@ -100,8 +98,8 @@ export async function initHome() {
       }, 500);
 
       setTimeout(() => {
-        mainCol.classList.add('show');
-        leftCol.classList.add('show');
+        mainCol.classList.remove('pop-element-reverse-hide');
+        leftCol.classList.remove('pop-element-hide');
       }, 750);
     });
   }
@@ -109,6 +107,6 @@ export async function initHome() {
   await renderStories();
   initNavbar();
   activateTooltips();
-  displayDetailPage();
-  backToHome();
+  animateDetailPage();
+  animateBackToHome();
 }

@@ -31,9 +31,8 @@
   transition: transform 0.5s ease-in-out;
 
   &:not(.show) {
-    visibility: visible;
+    visibility: hidden;
     transform: translateY(100%);
-    transition: transform 0.5s ease-in-out;
   }
 }
 .pop-element-reverse {
@@ -42,10 +41,19 @@
   transition: transform 0.5s ease-in-out;
 
   &:not(.show) {
-    visibility: visible;
+    visibility: hidden;
     transform: translateY(-100%);
-    transition: transform 0.5s ease-in-out;
   }
+}
+.pop-element-hide {
+  visibility: visible;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+}
+.pop-element-reverse-hide {
+  visibility: visible;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
 }
 .pop-button {
   transition: transform 0.3s ease-in-out;
