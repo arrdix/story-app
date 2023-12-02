@@ -26,8 +26,8 @@ export class MainForm extends LitLightDom {
             </div>
             <div class="mx-4 mb-2">
               <div class="input-group input-group-sm">
-                <input type="password" class="form-control form-control-sm fs-10" id="password" minlength="8" placeholder="Password" required>
-                <button class="input-group-text" type="button" id="login-btn-show-password">
+                <input type="password" class="form-control form-control-sm form-password fs-10" id="password" minlength="8" placeholder="Password" required>
+                <button class="btn-auth input-group-text" type="button" id="login-btn-show-password">
                   <i class="bi bi-eye" id="login-eye-icon"></i>
                 </button>
                 <div class="invalid-feedback" id="">${msg('Please enter a valid password.')}</div>  
@@ -86,13 +86,17 @@ export class MainForm extends LitLightDom {
               <div class="input-group input-group-sm">
                 <input
                   type="password"
-                  class="form-control form-control-sm fs-10"
+                  class="form-control form-control-sm form-password fs-10"
                   id="password"
                   minlength="8"
                   placeholder="Password"
                   required
                 />
-                <button class="input-group-text" type="button" id="register-btn-show-password">
+                <button
+                  class="btn-auth input-group-text"
+                  type="button"
+                  id="register-btn-show-password"
+                >
                   <i class="bi bi-eye" id="register-eye-icon"></i>
                 </button>
                 <div class="invalid-feedback" id="">${msg('Please enter a valid password.')}</div>

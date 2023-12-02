@@ -64,3 +64,17 @@
   width: 150px !important;
   height: 150px !important;
 }
+.btn-auth {
+  background-color: white;
+  border-left: 1px solid transparent !important;
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+}
+#password {
+  border-right: 1px solid transparent !important;
+
+  &:focus + .btn-auth {
+    border: 1px solid transparent;
+    transition: border .1s ease .05s;
+  }
+}
