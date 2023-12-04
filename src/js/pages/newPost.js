@@ -1,5 +1,6 @@
 import { initNavbar } from '../utils/navbar';
 import Stories from '../network/stories';
+import { errorHandler } from '../utils/errorHandler';
 
 export function initNewPost() {
   window.addEventListener('load', () => {
@@ -79,33 +80,30 @@ export function initNewPost() {
         postSpinner.classList.remove('d-none');
 
         const newStory = createFormData(descriptionStory, photoStory, latStory, lonStory);
-        const response = await Stories.addStoryGuest(newStory);
-        window.alert(response.data.message);
+        await Stories.addStoryGuest(newStory);
         window.location.href = '/';
       } catch (error) {
-        window.alert(error);
+        errorHandler(error);
       }
     }
 
     async function generateNewStory(descriptionStory, photoStory, latStory, lonStory) {
-      imageValidation(photoStory);
-
       try {
+        imageValidation(photoStory);
         const postSpinner = document.getElementById('post-spinner');
         postSpinner.classList.remove('d-none');
 
         const newStory = createFormData(descriptionStory, photoStory, latStory, lonStory);
-        const response = await Stories.addStory(newStory);
-        window.alert(response.data.message);
+        await Stories.addStory(newStory);
         window.location.href = '/';
       } catch (error) {
-        window.alert(error);
+        errorHandler(error);
       }
     }
 
     function imageValidation(photoStory) {
       if (!photoStory.type.startsWith('image/')) {
-        window.alert('The story photo must be a valid image');
+        throw new Error('The story photo must be a valid image');
       }
     }
 
