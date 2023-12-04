@@ -69,6 +69,7 @@ export class AboutContents extends LitElement {
           <img src="/lit-dark.png" class="tech-image" alt="" />
           <img src="/git-dark.png" class="tech-image" alt="" />
           <img src="/html-dark.png" class="tech-image" alt="" />
+          <img src="/firebase-dark.png" class="tech-image" alt="" />
         </div>
       </div>
     `;

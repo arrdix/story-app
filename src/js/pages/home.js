@@ -68,14 +68,17 @@ export async function initHome() {
           mainCol.classList.remove('d-md-block');
           mainCol.classList.add('d-none');
           leftCol.classList.remove('d-md-flex');
-          detailCol.classList.add('d-md-flex');
+
+          detailCol.classList.remove('d-none');
+          detailCol.classList.add('d-flex');
           mainDetailCol.classList.add('d-md-block');
         }, 500);
 
         setTimeout(() => {
           detailCol.classList.add('show');
-          mainDetailCol.classList.add('show');
           detailCol.classList.remove('pop-element-hide');
+
+          mainDetailCol.classList.add('show');
           mainDetailCol.classList.remove('pop-element-reverse-hide');
         }, 750);
       });
@@ -96,8 +99,10 @@ export async function initHome() {
       setTimeout(() => {
         detailCol.classList.remove('d-md-flex');
         mainDetailCol.classList.remove('d-md-block');
+
         leftCol.classList.add('d-md-flex');
         mainCol.classList.add('d-md-block');
+        mainCol.classList.remove('d-none');
       }, 500);
 
       setTimeout(() => {

@@ -48,6 +48,10 @@ function logOutHandler() {
 function adjustWrapperSize() {
   const mainWrapper = document.querySelector('.main-wrapper');
   window.addEventListener('resize', () => {
+    adjustWrapper();
+  });
+
+  function adjustWrapper() {
     if (window.innerWidth < 768) {
       mainWrapper.classList.remove('vh-70');
       mainWrapper.classList.add('vh-100');
@@ -55,7 +59,9 @@ function adjustWrapperSize() {
       mainWrapper.classList.remove('vh-100');
       mainWrapper.classList.add('vh-70');
     }
-  });
+  }
+
+  adjustWrapper();
 }
 
 // activate toast

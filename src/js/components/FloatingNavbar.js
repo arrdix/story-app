@@ -1,6 +1,8 @@
 import { html } from 'lit';
 import { msg } from '@lit/localize';
 import { LitLightDom } from './base/LitLightDom';
+import SessionUtils from '../utils/sessionUtils';
+import Config from '../config/config';
 
 export class FloatingNavbar extends LitLightDom {
   render() {
@@ -28,12 +30,21 @@ export class FloatingNavbar extends LitLightDom {
                 >${msg('New Post')}</a
               >
               <a href="/about.html" class="dropdown-item btn btn-logout fs-10">${msg('About')}</a>
-              <a href="/login.html" class="dropdown-item btn btn-logout fs-10">${msg('Log Out')}</a>
+              <a
+                href="/login.html"
+                @click=${this._logOutHandler}
+                class="dropdown-item btn btn-logout fs-10"
+                >${msg('Log Out')}</a
+              >
             </ul>
           </div>
         </div>
       </nav>
     `;
+  }
+
+  _logOutHandler() {
+    SessionUtils.destroySession(Config.USER_TOKEN_KEY);
   }
 }
 

@@ -26,7 +26,7 @@ export class MainProfile extends LitLightDom {
       <div class="row justify-content-center align-items-end mb-2">
         <img
           src="${this.owner ? 'https://source.unsplash.com/1000x1000/?face' : this.photoUrl}"
-          class="detail-dp object-fit-cover rounded-pill border border-3 border-light p-0 d-none d-md-block"
+          class="detail-dp object-fit-cover rounded-pill border border-3 border-light p-0 d-block"
           id="detail-dp"
           alt="Profile Picture"
         />
