@@ -9,14 +9,22 @@ export async function initHome() {
     loadingElement.classList.add('d-none');
 
     const mainCarouselElement = document.getElementById('mainCarousel');
-    mainCarouselElement.addEventListener('wheel', (event) => {
+    mainCarouselElement.addEventListener('wheel', scrollOnMainCarousel);
+    mainCarouselElement.addEventListener('click', clickOnMainCarousel);
+
+    function scrollOnMainCarousel(event) {
       const mainCarousel = new bootstrap.Carousel(document.getElementById('mainCarousel'));
       if (event.deltaY > 0) mainCarousel.next();
       if (event.deltaY < 0) mainCarousel.prev();
 
       const scrollOvelay = document.querySelector('.scroll-overlay');
       scrollOvelay.classList.add('d-none');
-    });
+    }
+
+    function clickOnMainCarousel() {
+      const scrollOvelay = document.querySelector('.scroll-overlay');
+      scrollOvelay.classList.add('d-none');
+    }
 
     const leftCol = document.querySelector('#left-col');
     setTimeout(() => {
