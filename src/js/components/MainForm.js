@@ -41,7 +41,7 @@ export class MainForm extends LitLightDom {
             <div class="d-grid mx-4 mb-2">
               <button class="btn btn-dark fs-8 fw-1" type="submit">
                 <span class="spinner-border spinner-border-sm d-none" id="login-spinner" aria-hidden="true"></span>
-                <span role="status">${msg('Log in StoryApp')}</span>
+                <span role="status">${msg('Log in')}</span>
               </button>
             </div>
             <div class="mx-4 mb-3 text-dark d-flex justify-content-center">
