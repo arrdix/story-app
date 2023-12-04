@@ -31,22 +31,26 @@ export class StoryPreview extends LitLightDom {
           id="image-preview"
           alt="Story Image"
         />
-        <div class="card-backdrop position-absolute rounded-5"></div>
+        <div class="${this.owner ? 'card-backdrop' : ''} position-absolute rounded-5"></div>
         <div class="card-img-overlay">
-          <div class="card-title d-flex justify-content-start ps-2 pt-1 gap-2">
+          <div
+            class="${this.owner
+              ? 'card-title d-flex justify-content-start ps-2 pt-1 gap-2'
+              : 'd-none'}"
+          >
             <img
-              src="${this.owner ? 'https://source.unsplash.com/1000x1000/?face' : this.photoUrl}"
+              src="${this.owner ? 'https://source.unsplash.com/1000x1000/?face' : ''}"
               class="stories-dp object-fit-cover rounded-pill border border-3 border-light w-5"
               alt=""
             />
             <div class="d-flex flex-column">
-              <p class="m-0">${this.name}</p>
-              <p class="fs-12 m-0">${this.owner ? msg('Story Preview') : this.createdAt}</p>
+              <p class="m-0">${this.owner ? this.name : ''}</p>
+              <p class="fs-12 m-0">${this.owner ? msg('Story Preview') : ''}</p>
             </div>
           </div>
           <div class="card-body p-0 ps-2">
             <p class="card-text fs-8" id="description-preview">
-              ${this.owner ? msg('Please write your story description.') : this.description}
+              ${this.owner ? msg('Please write your story description.') : ''}
             </p>
           </div>
         </div>
