@@ -1,95 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-<file target-language="de" source-language="en" original="lit-localize-inputs" datatype="plaintext">
-<body>
-<trans-unit id="s225ba2a1eecca3aa">
-  <source>Story Preview</source>
-  <target>Geschichtsvorschau</target>
-</trans-unit>
-<trans-unit id="s4b5d8dcf2271147e">
-  <source>Please write your story description.</source>
-  <target>Bitte schreiben Sie Ihre Geschichtsbeschreibung.</target>
-</trans-unit>
-<trans-unit id="sbb1aa5c8ed3a72a2">
-  <source>Story Unfolds in a Snap!</source>
-  <target>Story Unfolds in a Snap!</target>
-</trans-unit>
-<trans-unit id="s6a0bc0ce56a9ae4a">
-  <source>Features</source>
-  <target>Funktionen</target>
-</trans-unit>
-<trans-unit id="s8da135fdef768225">
-  <source>Dynamic stories data</source>
-  <target>Dynamische Geschichtsdaten</target>
-</trans-unit>
-<trans-unit id="s2fcb7d0d8c22a3d8">
-  <source>Post new story</source>
-  <target>Neue Geschichte veröffentlichen</target>
-</trans-unit>
-<trans-unit id="s47e06d5dc1bb2c0a">
-  <source>Story preview</source>
-  <target>Geschichtsvorschau</target>
-</trans-unit>
-<trans-unit id="sc8da3cc71de63832">
-  <source>Login</source>
-  <target>Anmelden</target>
-</trans-unit>
-<trans-unit id="s4625e5cafb0ec8c7">
-  <source>Technologies</source>
-  <target>Technologien</target>
-</trans-unit>
-<trans-unit id="s6abb1cd87fe0114e">
-  <source>Home</source>
-  <target>Zuhause</target>
-</trans-unit>
-<trans-unit id="sf6f5d8ff2a4899c5">
-  <source>New Post</source>
-  <target>Neuer Beitrag</target>
-</trans-unit>
-<trans-unit id="s0487f33d9ddaabde">
-  <source>About</source>
-  <target>Über</target>
-</trans-unit>
-<trans-unit id="s4b29b29baefcf90e">
-  <source>Please enter a valid username.</source>
-  <target>Bitte geben Sie einen gültigen Benutzernamen ein.</target>
-</trans-unit>
-<trans-unit id="se3f5b5d9160870c1">
-  <source>Please enter a valid password.</source>
-  <target>Bitte geben Sie ein gültiges Passwort ein.</target>
-</trans-unit>
-<trans-unit id="s85366fac18679f28">
-  <source>Forgot password?</source>
-  <target>Passwort vergessen?</target>
-</trans-unit>
-<trans-unit id="scb04435672ac5410">
-  <source>Log in</source>
-  <target>Anmelden</target>
-</trans-unit>
-<trans-unit id="scad07cc65ad2fb30">
-  <source>Don't have an account?</source>
-  <target>Sie haben noch keinen Account?</target>
-</trans-unit>
-<trans-unit id="s5e6b698a2ec87331">
-  <source>Sign up</source>
-  <target>Registrieren</target>
-</trans-unit>
-<trans-unit id="sba1ea15d0a81995b">
-  <source>Upload a photo</source>
-  <target>Laden Sie ein Foto hoch</target>
-</trans-unit>
-<trans-unit id="s1dee9519bd890fdc">
-  <source>Please upload your story photo.</source>
-  <target>Bitte laden Sie Ihr Geschichtsfoto hoch.</target>
-</trans-unit>
-<trans-unit id="sb357ea19a722d827">
-  <source>Post</source>
-  <target>Veröffentlichen</target>
-</trans-unit>
-<trans-unit id="se5f4d146bbee62a2">
-  <source>I'm a passionate front-end developer who loves connecting the dots between design and functionality.</source>
-  <target>Ich bin ein leidenschaftlicher Front-End-Entwickler, der Freude daran hat, die Verbindung zwischen Design und Funktionalität herzustellen.</target>
-</trans-unit>
-</body>
-</file>
+  <file target-language="de" source-language="en" original="lit-localize-inputs" datatype="plaintext">
+    <body>
+      <trans-unit id="s225ba2a1eecca3aa">
+        <source>Story Preview</source>
+        <target>Geschichtsvorschau</target>
+      </trans-unit>
+      <trans-unit id="s4b5d8dcf2271147e">
+        <source>Please write your story description.</source>
+        <target>Bitte schreiben Sie Ihre Geschichtsbeschreibung.</target>
+      </trans-unit>
+      <trans-unit id="sbb1aa5c8ed3a72a2">
+        <source>Story Unfolds in a Snap!</source>
+        <target>Story Unfolds in a Snap!</target>
+      </trans-unit>
+      <trans-unit id="s6a0bc0ce56a9ae4a">
+        <source>Features</source>
+        <target>Funktionen</target>
+      </trans-unit>
+      <trans-unit id="s8da135fdef768225">
+        <source>Dynamic stories data</source>
+        <target>Dynamische Geschichtsdaten</target>
+      </trans-unit>
+      <trans-unit id="s2fcb7d0d8c22a3d8">
+        <source>Post new story</source>
+        <target>Neue Geschichte veröffentlichen</target>
+      </trans-unit>
+      <trans-unit id="s47e06d5dc1bb2c0a">
+        <source>Story preview</source>
+        <target>Geschichtsvorschau</target>
+      </trans-unit>
+      <trans-unit id="sc8da3cc71de63832">
+        <source>Login</source>
+        <target>Anmelden</target>
+      </trans-unit>
+      <trans-unit id="s4625e5cafb0ec8c7">
+        <source>Technologies</source>
+        <target>Technologien</target>
+      </trans-unit>
+      <trans-unit id="s6abb1cd87fe0114e">
+        <source>Home</source>
+        <target>Zuhause</target>
+      </trans-unit>
+      <trans-unit id="sf6f5d8ff2a4899c5">
+        <source>New Post</source>
+        <target>Neuer Beitrag</target>
+      </trans-unit>
+      <trans-unit id="s0487f33d9ddaabde">
+        <source>About</source>
+        <target>Über</target>
+      </trans-unit>
+      <trans-unit id="s4b29b29baefcf90e">
+        <source>Please enter a valid username.</source>
+        <target>Bitte geben Sie einen gültigen Benutzernamen ein.</target>
+      </trans-unit>
+      <trans-unit id="se3f5b5d9160870c1">
+        <source>Please enter a valid password.</source>
+        <target>Bitte geben Sie ein gültiges Passwort ein.</target>
+      </trans-unit>
+      <trans-unit id="s85366fac18679f28">
+        <source>Forgot password?</source>
+        <target>Passwort vergessen?</target>
+      </trans-unit>
+      <trans-unit id="scb04435672ac5410">
+        <source>Log in</source>
+        <target>Anmelden</target>
+      </trans-unit>
+      <trans-unit id="s5e6b698a2ec87331">
+        <source>Sign up</source>
+        <target>Registrieren</target>
+      </trans-unit>
+      <trans-unit id="sba1ea15d0a81995b">
+        <source>Upload a photo</source>
+        <target>Laden Sie ein Foto hoch</target>
+      </trans-unit>
+      <trans-unit id="s1dee9519bd890fdc">
+        <source>Please upload your story photo.</source>
+        <target>Bitte laden Sie Ihr Geschichtsfoto hoch.</target>
+      </trans-unit>
+      <trans-unit id="sb357ea19a722d827">
+        <source>Post</source>
+        <target>Veröffentlichen</target>
+      </trans-unit>
+      <trans-unit id="se5f4d146bbee62a2">
+        <source>I'm a passionate front-end developer who loves connecting the dots between design and functionality.</source>
+        <target>Ich bin ein leidenschaftlicher Front-End-Entwickler, der Freude daran hat, die Verbindung zwischen Design und Funktionalität herzustellen.</target>
+      </trans-unit>
+      <trans-unit id="sfb917884502fe3b6">
+        <source>With a user-friendly interface, StoryApp allows users to share moments, thoughts, and updates with a captivating blend of images and text!</source>
+        <target>Mit einer benutzerfreundlichen Oberfläche ermöglicht StoryApp Benutzern, Momente, Gedanken und Updates mit einer fesselnden Mischung aus Bildern und Texten zu teilen!</target>
+      </trans-unit>
+      <trans-unit id="s0f09f183d00bc296">
+        <source>Scrollable carousel</source>
+        <target>Scrollbares Karussell</target>
+      </trans-unit>
+      <trans-unit id="s900a1d1af7cae56e">
+        <source>Mobile friendly</source>
+        <target>Mobile freundlich</target>
+      </trans-unit>
+      <trans-unit id="sd52fe663c536f72a">
+        <source>User authentication</source>
+        <target>Benutzerauthentifizierung</target>
+      </trans-unit>
+      <trans-unit id="sa03807e44737a915">
+        <source>Log Out</source>
+        <target>Ausloggen</target>
+      </trans-unit>
+      <trans-unit id="sdb314e7e0f343d2d">
+        <source>Dont have an account?</source>
+        <target>Haben Sie kein Konto?</target>
+      </trans-unit>
+      <trans-unit id="s5ed8698a2f254511">
+        <source>Sign Up</source>
+        <target>Registrieren</target>
+      </trans-unit>
+      <trans-unit id="s205b3e04ad286caa">
+        <source>Already have an account?</source>
+        <target>Haben Sie bereits ein Konto?</target>
+      </trans-unit>
+      <trans-unit id="s6858bea9a6e7ec30">
+        <source>Post as anonymous</source>
+        <target>Als anonym veröffentlichen</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>

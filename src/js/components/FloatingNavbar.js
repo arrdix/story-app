@@ -25,7 +25,7 @@ export class FloatingNavbar extends LitLightDom {
               <i class="bi bi-list fs-3"></i>
             </button>
             <ul class="dropdown-menu">
-              <a href="/" class="dropdown-item btn btn-logout fs-10">Home</a>
+              <a href="/" class="dropdown-item btn btn-logout fs-10">${msg('Home')}</a>
               <a href="/new-post.html" class="dropdown-item btn btn-logout fs-10"
                 >${msg('New Post')}</a
               >

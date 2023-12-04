@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { LitElement, html, css } from 'lit';
 import { msg, updateWhenLocaleChanges } from '@lit/localize';
 
@@ -45,15 +46,19 @@ export class AboutContents extends LitElement {
       <div class="desc-wrapper">
         <h5 class="desc-title">${msg('Story Unfolds in a Snap!')}</h5>
         <p class="desc-text">
-          ${'With a user-friendly interface, StoryApp allows users to share moments, thoughts, and updates with a captivating blend of images and text!'}
+          ${msg(
+            'With a user-friendly interface, StoryApp allows users to share moments, thoughts, and updates with a captivating blend of images and text!',
+          )}
         </p>
       </div>
 
       <div class="features-wrapper">
         <h5 class="features-title">${msg('Features')}</h5>
         <p class="features-text">
-          ${'Scrollable carousel'}<br />
+          ${msg('Scrollable carousel')}<br />
           ${msg('Dynamic stories data')} <br />
+          ${msg('Mobile friendly')} <br />
+          ${msg('User authentication')} <br />
           ${msg('Post new story')} <br />
           ${msg('Story preview')} <br />
           ${msg('Login')} <br />
@@ -63,13 +68,13 @@ export class AboutContents extends LitElement {
       <div class="tech-wrapper">
         <h5 class="tech-title">${msg('Technologies')}</h5>
         <div class="tech-content">
-          <img src="/javascript-dark.png" class="tech-image" alt="" />
-          <img src="/bootstrap-dark.png" class="tech-image" alt="" />
-          <img src="/sass-dark.png" class="tech-image" alt="" />
-          <img src="/lit-dark.png" class="tech-image" alt="" />
-          <img src="/git-dark.png" class="tech-image" alt="" />
-          <img src="/html-dark.png" class="tech-image" alt="" />
-          <img src="/firebase-dark.png" class="tech-image" alt="" />
+          <img src="/javascript-dark.png" class="tech-image" alt="JavaScript" />
+          <img src="/bootstrap-dark.png" class="tech-image" alt="Bootstrap" />
+          <img src="/sass-dark.png" class="tech-image" alt="Sass" />
+          <img src="/lit-dark.png" class="tech-image" alt="Lit" />
+          <img src="/git-dark.png" class="tech-image" alt="Git" />
+          <img src="/html-dark.png" class="tech-image" alt="HTML" />
+          <img src="/firebase-dark.png" class="tech-image" alt="Firebase" />
         </div>
       </div>
     `;

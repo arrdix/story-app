@@ -1,4 +1,4 @@
-import { updateWhenLocaleChanges } from '@lit/localize';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 import { html } from 'lit';
 import { LitLightDom } from './base/LitLightDom';
 import Auth from '../network/auth';
@@ -24,7 +24,7 @@ class NewPostProfile extends LitLightDom {
         />
         <div class="d-flex flex-column">
           <p class="m-0">${this.name}</p>
-          <p class="fs-12 m-0">Post new story</p>
+          <p class="fs-12 m-0">${msg('Post new story')}</p>
         </div>
       </div>
     `;
