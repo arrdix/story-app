@@ -1,5 +1,6 @@
 import moment from 'moment';
 import Stories from '../network/stories';
+import { errorHandler } from './errorHandler';
 
 export function renderStoryDetail(storyId) {
   function renderComponent(story) {
@@ -25,7 +26,7 @@ export function renderStoryDetail(storyId) {
       const response = await Stories.getStoriesById(id);
       renderComponent(response.data.story);
     } catch (error) {
-      window.alert(error);
+      errorHandler(error);
     }
   }
 
