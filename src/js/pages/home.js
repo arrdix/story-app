@@ -61,6 +61,11 @@ export async function initHome() {
     const detailBtns = document.querySelectorAll('.btn-detail');
     detailBtns.forEach((btn) => {
       btn.addEventListener('click', (event) => {
+        const cardBackdrop = document.getElementById('card-backdrop');
+        const cardImgOverlay = document.getElementById('card-img-overlay');
+        cardBackdrop.classList.add('d-none');
+        cardImgOverlay.classList.add('d-none');
+
         const storyId = event.currentTarget.id;
         renderStoryDetail(storyId);
 
