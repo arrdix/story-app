@@ -25,14 +25,14 @@ export class StoryPreview extends LitLightDom {
       <div class="card h-100 text-light rounded-5">
         <img
           src="${this.owner
-            ? 'https://placehold.co/1200x700/272727/fff?text=please+upload+your+story+image+from+public/img+directory'
+            ? 'https://placehold.co/1200x700/272727/fff?text=Image+preview+will+be+displayed+here.'
             : this.photoUrl}"
           class="card-img object-fit-cover h-100 rounded-5 p-0"
           id="image-preview"
           alt="Story Image"
         />
-        <div class="card-backdrop position-absolute rounded-5"></div>
-        <div class="card-img-overlay">
+        <div class="card-backdrop position-absolute rounded-5" id="card-backdrop"></div>
+        <div class="card-img-overlay" id="card-img-overlay">
           <div class="card-title d-flex justify-content-start ps-2 pt-1 gap-2">
             <img
               src="${this.owner ? 'https://source.unsplash.com/1000x1000/?face' : this.photoUrl}"
