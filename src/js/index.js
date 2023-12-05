@@ -6,7 +6,6 @@ import * as bootstrap from 'bootstrap';
 import { initLogin } from './pages/login';
 import { initHome } from './pages/home';
 import { initNewPost } from './pages/newPost';
-import { fetchDataFromAPI } from './utils/dataSource';
 import { initAbout } from './pages/about';
 import { setLocale } from './localization';
 import { initRegister } from './pages/register';
@@ -20,20 +19,11 @@ function initPages() {
   const route = detectRoute();
   route();
 
-  fetchStoriesData();
   logOutHandler();
   adjustWrapperSize();
   setLanguage();
 
   checkUserAuth.checkLoginState();
-}
-
-function fetchStoriesData() {
-  const isFetched = localStorage.getItem('fetched');
-  if (!isFetched) {
-    fetchDataFromAPI();
-    localStorage.setItem('fetched', true);
-  }
 }
 
 // logout button handler
